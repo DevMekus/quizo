@@ -10,12 +10,22 @@
         </div>
         <div class="s-link-wrap">
             <a href="#">
-                <span class="fas fa-edit icon"></span><span class="text">Quiz</span>
+                <span class="fas fa-question-circle icon"></span><span class="text">Manage Quiz</span>
             </a>
         </div>
         <div class="s-link-wrap">
             <a href="#">
-                <span class="fas fa-user icon"></span><span class="text">Profile</span>
+                <span class="fas fa-clipboard-list icon"></span><span class="text">Manage Questions</span>
+            </a>
+        </div>
+        <div class="s-link-wrap">
+            <a href="#">
+                <span class="fas fa-chart-line icon"></span><span class="text">User Performance</span>
+            </a>
+        </div>
+        <div class="s-link-wrap">
+            <a href="#">
+                <span class="fas fa-users icon"></span><span class="text">Manage Users</span>
             </a>
         </div>
     </div>
