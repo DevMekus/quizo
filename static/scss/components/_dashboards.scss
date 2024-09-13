@@ -1,0 +1,13 @@
+.dashboard-wrapper{
+    width: 100%;
+    position: relative;
+    display: flex;
+    min-height: 100vh;
+}
+
+.page-content{
+    width: calc(100% - 230px);
+    position: relative;
+    margin-left: 230px;
+    min-height: 100vh;
+}

@@ -1,0 +1,62 @@
+.sidebar{
+    width: 230px;
+    height: 100vh;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    background-color: rgb(226, 226, 226);
+    z-index: 2;
+}
+
+.sidelogo{
+    width: 100%;
+    position: relative;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar-links{
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.sidebar-links .active{
+    background-color: $primaryColor;
+   
+}
+
+.sidebar-links .active a{
+    color: #fff;
+}
+
+.s-link-wrap{
+    width: 100%;
+    position: relative;
+    padding: 5px 20px;
+    margin-bottom: 10px;
+}
+
+.s-link-wrap a{
+    font-size: 17px;
+    text-decoration: none;
+    color: $textColor;
+    
+}
+
+.s-link-wrap a .icon{
+    margin-right: 10px;
+}
+
+.s-link-wrap a .text{
+    font-weight: 500;
+}
+
+.s-link-wrap:hover{
+    background-color: $primaryColor;
+}
+
+.s-link-wrap:hover a{
+    color: #fff;
+}
