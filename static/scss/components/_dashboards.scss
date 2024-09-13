@@ -1,0 +1,121 @@
+.dashboard-wrapper{
+    width: 100%;
+    position: relative;
+    min-height: 100vh;
+}
+
+.dashboard-wrapper .inner-center{
+    width: 70%;
+    margin: auto;
+    position: relative;
+    min-height: 100vh;
+    padding: 20px 0px;
+}
+
+h1.page-title {
+    font-size: 2.5rem;       /* Set the font size */
+    font-weight: bold;       /* Make the title bold */
+   
+    margin-bottom: 20px;     /* Add space below the title */
+    color: #333;             /* Set the text color (dark gray) */
+    text-transform: capitalize; /* Capitalize the first letter of each word */
+}
+
+.sub-page-title{
+    
+}
+
+.desc-grey{
+    color: #666;  
+}
+
+p.page-description {
+    font-size: 1.2rem;         /* Set a slightly larger font size */
+                /* Use a lighter gray color */
+    margin-top: 10px;          /* Space between the title and the description */
+    margin-bottom: 30px;       /* Space below the description */
+    line-height: 1.6;          /* Increase line spacing for readability */
+    margin-top: -20px;
+}
+
+.card .small-p{
+    font-size: 16px;         /* Set a slightly larger font size */
+    color: #666; 
+}
+
+.moveup{
+    margin-top: -10px;
+}
+
+.overview{
+    position: relative;
+}
+
+.overview .card{
+    cursor: pointer;
+    position: relative;
+    transition: all .30s ease-out;
+}
+
+.overview .card h5{
+    color: $primaryColor;
+    font-weight: 700;
+}
+
+.overview .card:hover{
+    background-color: $primaryColor;
+    color: #fff;
+}
+
+.overview .card:hover *{    
+    color: #fff;
+}
+
+.quiz-box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.quiz-box .title{
+    text-align: center;
+}
+
+.progress-wrap{
+    width: 70px;
+    height: 70px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    color: #fff;
+}
+
+.progress-success{
+    background-color: $greenColor;
+}
+
+.progress-danger{
+    background-color: $redColor;
+}
+
+.bg-blue{
+    background-color: #a1b7e9;
+}
+
+.bg-grey{
+    background-color: #f1f1f1;
+}
+.active-card{
+    background-color: $primaryColor;
+    color: #fff;
+}
+
+.active-card .card-inner h5,
+.active-card .small-p,
+.active-card h2{
+    color: #fff;
+}

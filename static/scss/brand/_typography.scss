@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@900&display=swap');
+
+p {
+    font-family:"Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.95em; 
+    color: $textColor;  
+}
+
+.small-p{
+    font-size: 16px;
+}
+
+.p-description{
+    font-size: 15px;
+    margin-top: -10px;   
+}
+
+h1 {
+    font-size: 42px;
+}
+
+h2 {
+    font-size: 35px;
+}
+h3 {
+    font-size: 28px;
+}
+h4 {
+    font-size: 21px;
+}
+h5 {
+    font-size: 17px;
+}
+h6 {
+    font-size: 14px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    line-height: 1.5em;   
+    color: $textColor;
+}

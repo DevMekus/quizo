@@ -1,0 +1,24 @@
+@media only screen and (max-width: 762px) {
+    .auth-page{
+        width: 100%;
+        min-height: 100vh;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: normal;
+        height: 100%;
+    }
+
+    .auth-img-side{
+        display: none;
+    }
+
+    .auth-form-side{
+        width: 100%;
+        min-height: auto;
+        height: 100%;
+        position: relative;        
+        padding: 30px 20px;  
+        min-height: 100vh;
+    }
+}

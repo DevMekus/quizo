@@ -1,0 +1,35 @@
+$primaryColor :#2955BB;
+$textColor : #191919;
+$blackColor: #15181F;
+$redColor: #DB2D2E;
+$greyColor:rgba(170, 168, 168, 0.579);
+$greenColor :  rgb(6, 112, 6);
+
+.color-primary{
+    color: $primaryColor;
+}
+
+.color-green{
+    color: $greenColor;
+}
+
+.color-grey{
+    color: $greyColor;
+}
+
+.color-red{
+    color: $redColor;
+}
+
+.color-white{
+    color: #fff;
+}
+
+
+.bg-grey{
+    background-color: $greyColor;
+}
+
+.bg-brandColor{
+    background-color: $primaryColor;
+}

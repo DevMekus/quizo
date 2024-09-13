@@ -1,0 +1,462 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@900&display=swap");
+.color-primary {
+  color: #2955BB;
+}
+
+.color-green {
+  color: rgb(6, 112, 6);
+}
+
+.color-grey {
+  color: rgba(170, 168, 168, 0.579);
+}
+
+.color-red {
+  color: #DB2D2E;
+}
+
+.color-white {
+  color: #fff;
+}
+
+.bg-grey {
+  background-color: rgba(170, 168, 168, 0.579);
+}
+
+.bg-brandColor {
+  background-color: #2955BB;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.f-width {
+  width: 100%;
+  position: relative;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.flex-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.padding-10 {
+  padding: 10px;
+}
+
+.no-decoration {
+  text-decoration: none;
+}
+
+.mobile-only {
+  display: none;
+}
+
+.desktop-only {
+  display: none;
+}
+
+.padding-20 {
+  padding: 20px;
+}
+
+.scrollable {
+  width: 100%;
+  overflow: scroll;
+  position: relative;
+}
+
+.scrollable::-webkit-scrollbar {
+  display: none;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.95em;
+  color: #191919;
+}
+
+.small-p {
+  font-size: 16px;
+}
+
+.p-description {
+  font-size: 15px;
+  margin-top: -10px;
+}
+
+h1 {
+  font-size: 42px;
+}
+
+h2 {
+  font-size: 35px;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+h4 {
+  font-size: 21px;
+}
+
+h5 {
+  font-size: 17px;
+}
+
+h6 {
+  font-size: 14px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  line-height: 1.5em;
+  color: #191919;
+}
+
+.form-ctr {
+  width: 100%;
+  padding: 10px 15px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 1px solid #b4b4b4;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  outline: none;
+  color: #191919;
+}
+
+.form-ctr:focus {
+  border-color: #2955BB;
+  box-shadow: 0 0 5px #2955BB;
+  outline: none;
+  opacity: 1;
+}
+
+.form-input::-moz-placeholder {
+  color: rgba(170, 168, 168, 0.579);
+  opacity: 1;
+}
+
+.form-input::placeholder {
+  color: rgba(170, 168, 168, 0.579);
+  opacity: 1;
+}
+
+.button {
+  padding: 10px 20px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+}
+
+.button-sm {
+  padding: 5px 10px;
+}
+
+.button span {
+  font-size: 18px;
+}
+
+.button-primary {
+  background-color: #2955BB;
+  color: #fff;
+  opacity: 0.8;
+}
+
+.button-dark {
+  background-color: #15181F;
+  color: white;
+  opacity: 0.8;
+}
+
+.button-success {
+  background-color: rgb(6, 112, 6);
+  color: white;
+  opacity: 0.8;
+}
+
+.button-danger {
+  background-color: #DB2D2E;
+  color: #fff;
+  opacity: 0.8;
+}
+
+.semi-pill {
+  border-radius: 5px;
+}
+
+.button-primary:hover {
+  background-color: #2955BB;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+}
+
+.button-success:hover {
+  background-color: rgb(6, 112, 6);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+}
+
+.button-danger:hover {
+  background-color: #DB2D2E;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+}
+
+.button-dark:hover {
+  background-color: #15181F;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+}
+
+.button:active {
+  background-color: rgba(170, 168, 168, 0.579);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(2px);
+}
+
+.radius-5 {
+  border-radius: 5px;
+}
+
+.auth-page {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar {
+  width: 100%;
+  background-color: #2955BB;
+  position: relative;
+}
+
+.navbar .inner {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0px;
+}
+
+.navbar .inner .authBtn .button {
+  background-color: #fff;
+  color: #2955BB;
+  text-decoration: none;
+}
+
+.hero {
+  width: 100%;
+  height: 70vh;
+  position: relative;
+  background-color: rgba(170, 168, 168, 0.579);
+}
+
+.dashboard-wrapper {
+  width: 100%;
+  position: relative;
+  min-height: 100vh;
+}
+
+.dashboard-wrapper .inner-center {
+  width: 70%;
+  margin: auto;
+  position: relative;
+  min-height: 100vh;
+  padding: 20px 0px;
+}
+
+h1.page-title {
+  font-size: 2.5rem; /* Set the font size */
+  font-weight: bold; /* Make the title bold */
+  margin-bottom: 20px; /* Add space below the title */
+  color: #333; /* Set the text color (dark gray) */
+  text-transform: capitalize; /* Capitalize the first letter of each word */
+}
+
+.desc-grey {
+  color: #666;
+}
+
+p.page-description {
+  font-size: 1.2rem; /* Set a slightly larger font size */
+  /* Use a lighter gray color */
+  margin-top: 10px; /* Space between the title and the description */
+  margin-bottom: 30px; /* Space below the description */
+  line-height: 1.6; /* Increase line spacing for readability */
+  margin-top: -20px;
+}
+
+.card .small-p {
+  font-size: 16px; /* Set a slightly larger font size */
+  color: #666;
+}
+
+.moveup {
+  margin-top: -10px;
+}
+
+.overview {
+  position: relative;
+}
+
+.overview .card {
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease-out;
+}
+
+.overview .card h5 {
+  color: #2955BB;
+  font-weight: 700;
+}
+
+.overview .card:hover {
+  background-color: #2955BB;
+  color: #fff;
+}
+
+.overview .card:hover * {
+  color: #fff;
+}
+
+.quiz-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.quiz-box .title {
+  text-align: center;
+}
+
+.progress-wrap {
+  width: 70px;
+  height: 70px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  color: #fff;
+}
+
+.progress-success {
+  background-color: rgb(6, 112, 6);
+}
+
+.progress-danger {
+  background-color: #DB2D2E;
+}
+
+.bg-blue {
+  background-color: #a1b7e9;
+}
+
+.bg-grey {
+  background-color: #f1f1f1;
+}
+
+.active-card {
+  background-color: #2955BB;
+  color: #fff;
+}
+
+.active-card .card-inner h5,
+.active-card .small-p,
+.active-card h2 {
+  color: #fff;
+}
+
+@media only screen and (max-width: 762px) {
+  .auth-page {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: normal;
+    height: 100%;
+  }
+  .auth-img-side {
+    display: none;
+  }
+  .auth-form-side {
+    width: 100%;
+    min-height: auto;
+    height: 100%;
+    position: relative;
+    padding: 30px 20px;
+    min-height: 100vh;
+  }
+}/*# sourceMappingURL=main.css.map */
