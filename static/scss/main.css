@@ -288,175 +288,52 @@ h6 {
   height: 100vh;
   position: relative;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.navbar {
-  width: 100%;
-  background-color: #2955BB;
-  position: relative;
-}
-
-.navbar .inner {
-  width: 90%;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px 0px;
-}
-
-.navbar .inner .authBtn .button {
-  background-color: #fff;
-  color: #2955BB;
-  text-decoration: none;
-}
-
-.hero {
-  width: 100%;
-  height: 70vh;
-  position: relative;
-  background-color: rgba(170, 168, 168, 0.579);
-}
-
-.dashboard-wrapper {
-  width: 100%;
-  position: relative;
-  min-height: 100vh;
-}
-
-.dashboard-wrapper .inner-center {
-  width: 70%;
-  margin: auto;
-  position: relative;
-  min-height: 100vh;
-  padding: 20px 0px;
-}
-
-h1.page-title {
-  font-size: 2.5rem; /* Set the font size */
-  font-weight: bold; /* Make the title bold */
-  margin-bottom: 20px; /* Add space below the title */
-  color: #333; /* Set the text color (dark gray) */
-  text-transform: capitalize; /* Capitalize the first letter of each word */
-}
-
-.desc-grey {
-  color: #666;
-}
-
-p.page-description {
-  font-size: 1.2rem; /* Set a slightly larger font size */
-  /* Use a lighter gray color */
-  margin-top: 10px; /* Space between the title and the description */
-  margin-bottom: 30px; /* Space below the description */
-  line-height: 1.6; /* Increase line spacing for readability */
-  margin-top: -20px;
-}
-
-.card .small-p {
-  font-size: 16px; /* Set a slightly larger font size */
-  color: #666;
-}
-
-.moveup {
-  margin-top: -10px;
-}
-
-.overview {
-  position: relative;
-}
-
-.overview .card {
-  cursor: pointer;
-  position: relative;
-  transition: all 0.3s ease-out;
-}
-
-.overview .card h5 {
-  color: #2955BB;
-  font-weight: 700;
-}
-
-.overview .card:hover {
-  background-color: #2955BB;
-  color: #fff;
-}
-
-.overview .card:hover * {
-  color: #fff;
-}
-
-.quiz-box {
-  position: relative;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  gap: 10px;
 }
 
-.quiz-box .title {
-  text-align: center;
+.auth-con {
+  width: 400px;
+  margin: auto;
+  padding: 20px;
+  margin-top: 50px;
 }
 
-.progress-wrap {
-  width: 70px;
+.auth-title-con {
+  border: 1px solid rgb(171, 171, 171);
+  padding: 5px 20px;
+  border-radius: 10px;
+  background-color: #2955BB;
+  width: 100%;
   height: 70px;
-  margin: auto;
+  position: relative;
+}
+
+.auth-title-con h1 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.auth-title-con p {
+  font-size: 18px;
+  font-weight: 200;
+  margin-top: -10px;
+  color: #fff;
+}
+
+.auth-body-con {
+  border: 2px solid rgb(236, 236, 236);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 10px;
+  box-shadow: rgba(223, 223, 224, 0.292) 0px 7px 29px 0px;
+}
+
+.auth-bottom {
+  width: 100%;
+  position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  border-radius: 100%;
-  color: #fff;
-}
-
-.progress-success {
-  background-color: rgb(6, 112, 6);
-}
-
-.progress-danger {
-  background-color: #DB2D2E;
-}
-
-.bg-blue {
-  background-color: #a1b7e9;
-}
-
-.bg-grey {
-  background-color: #f1f1f1;
-}
-
-.active-card {
-  background-color: #2955BB;
-  color: #fff;
-}
-
-.active-card .card-inner h5,
-.active-card .small-p,
-.active-card h2 {
-  color: #fff;
-}
-
-@media only screen and (max-width: 762px) {
-  .auth-page {
-    width: 100%;
-    min-height: 100vh;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: normal;
-    height: 100%;
-  }
-  .auth-img-side {
-    display: none;
-  }
-  .auth-form-side {
-    width: 100%;
-    min-height: auto;
-    height: 100%;
-    position: relative;
-    padding: 30px 20px;
-    min-height: 100vh;
-  }
+  margin-top: 10px;
 }/*# sourceMappingURL=main.css.map */
