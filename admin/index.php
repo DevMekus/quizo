@@ -82,6 +82,7 @@ include("header.php");
                     </div>
                 </div>
             </section>
+            <?php include("footercontent.php") ?>
         </section>
     </div>
 </main>

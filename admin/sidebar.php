@@ -4,27 +4,27 @@
     </div>
     <div class="sidebar-links">
         <div class="s-link-wrap active">
-            <a href="#">
+            <a href="index.php">
                 <span class="fas fa-dashboard icon"></span><span class="text">Overview</span>
             </a>
         </div>
         <div class="s-link-wrap">
-            <a href="#">
+            <a href="quizmanager.php">
                 <span class="fas fa-question-circle icon"></span><span class="text">Manage Quiz</span>
             </a>
         </div>
         <div class="s-link-wrap">
-            <a href="#">
+            <a href="questionmanager.php">
                 <span class="fas fa-clipboard-list icon"></span><span class="text">Manage Questions</span>
             </a>
         </div>
         <div class="s-link-wrap">
-            <a href="#">
+            <a href="performance.php">
                 <span class="fas fa-chart-line icon"></span><span class="text">User Performance</span>
             </a>
         </div>
         <div class="s-link-wrap">
-            <a href="#">
+            <a href="usermanager.php">
                 <span class="fas fa-users icon"></span><span class="text">Manage Users</span>
             </a>
         </div>
