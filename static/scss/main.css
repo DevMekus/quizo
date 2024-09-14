@@ -279,6 +279,10 @@ h6 {
   transform: translateY(2px);
 }
 
+.click-effect:active {
+  transform: translateY(2px);
+}
+
 .radius-5 {
   border-radius: 5px;
 }
@@ -426,4 +430,75 @@ h6 {
   margin: auto;
   min-height: 100vh;
   margin-top: 20px;
+}
+
+.page-title {
+  line-height: 25px;
+  text-transform: capitalize;
+}
+
+.dashboard-metrics {
+  position: relative;
+}
+
+.dashboard-metrics .card {
+  position: relative;
+  transition: all 0.3s ease-out;
+}
+
+.dashboard-metrics .card:hover {
+  background-color: #2955BB;
+  cursor: pointer;
+}
+
+.dashboard-metrics .card:hover * {
+  color: #fff;
+}
+
+.dashboard-metrics .active {
+  background-color: #2955BB;
+}
+
+.dashboard-metrics .active * {
+  color: #fff;
+}
+
+.activities-con {
+  width: 100%;
+  position: relative;
+}
+
+.tableHead {
+  background-color: #2955BB;
+  font-weight: bold;
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+}
+
+.tableHead th {
+  font-weight: bold;
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 18px;
+  padding: 10px;
+  background-color: #2955BB;
+  font-family: "Montserrat", sans-serif;
+}
+
+.tableHead tr {
+  text-align: center;
+}
+
+.trow th {
+  background-color: #2955BB;
+  color: #fff;
+  text-align: center;
+}
+
+.trow {
+  border-top: 1px solid #2955BB;
+  border-bottom: 1px solid #2955BB;
+  cursor: pointer;
+  text-align: center;
 }/*# sourceMappingURL=main.css.map */

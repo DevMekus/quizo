@@ -19,3 +19,74 @@
     min-height: 100vh;    
     margin-top: 20px;
 }
+.page-title{
+    line-height: 25px;
+    text-transform: capitalize;
+}
+
+.dashboard-metrics{
+    position: relative;
+}
+
+.dashboard-metrics .card{
+    position: relative;
+    transition: all .30s ease-out;
+}
+
+.dashboard-metrics .card:hover{
+    background-color: $primaryColor;
+    cursor: pointer;
+}
+
+.dashboard-metrics .card:hover *{
+    color: #fff;
+}
+
+.dashboard-metrics .active{
+    background-color: $primaryColor;
+}
+
+.dashboard-metrics .active *{
+    color: #fff;
+}
+.activities-con{
+    width: 100%;
+    position: relative;
+}
+
+
+.tableHead {
+    background-color: $primaryColor;
+    font-weight: bold;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+   
+}
+
+.tableHead th{   
+    font-weight: bold;   
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 18px;  
+    padding: 10px;
+    background-color:$primaryColor;
+    font-family: "Montserrat", sans-serif;
+}
+
+.tableHead tr{
+    text-align: center;
+}
+
+.trow th{
+    background-color: $primaryColor;
+    color: #fff;
+    text-align: center;
+}
+
+.trow{
+    border-top: 1px solid $primaryColor;
+    border-bottom: 1px solid $primaryColor;
+    cursor: pointer;
+    text-align: center;
+}
