@@ -128,8 +128,8 @@ p {
   font-size: 16px;
 }
 
-.p-description {
-  font-size: 15px;
+.page-description {
+  font-size: 18px;
   margin-top: -10px;
 }
 
@@ -418,4 +418,12 @@ h6 {
   position: relative;
   margin-left: 230px;
   min-height: 100vh;
+}
+
+.content-centered {
+  position: relative;
+  width: 90%;
+  margin: auto;
+  min-height: 100vh;
+  margin-top: 20px;
 }/*# sourceMappingURL=main.css.map */
