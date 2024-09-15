@@ -8,9 +8,9 @@ include("header.php");
         <?php include("navbar.php"); ?>
         <section class="content-centered">
             <div class="page-title-con">
-                <h2 class="page-title">Welcome back</h2>
-                <h4 class="color-primary">Impruuv Systems</h4>
-                <p class="page-description">Attend to the quiz overviews</p>
+                <h2 class="page-title">Manage Questions
+                </h2>
+                <p class="page-description"> Functionalities to add, update, and delete questions within quizzes</p>
             </div>
             <?php include("footercontent.php") ?>
         </section>

@@ -211,6 +211,7 @@ h6 {
   justify-content: center;
   align-items: center;
   text-transform: capitalize;
+  text-decoration: none;
 }
 
 .button-sm {
@@ -314,15 +315,16 @@ h6 {
 
 .auth-title-con h1 {
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 900;
   color: #fff;
 }
 
 .auth-title-con p {
   font-size: 18px;
-  font-weight: 200;
+  font-weight: 100;
   margin-top: -10px;
   color: #fff;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .auth-body-con {
@@ -501,4 +503,64 @@ h6 {
   border-bottom: 1px solid #2955BB;
   cursor: pointer;
   text-align: center;
+}
+
+.quiz-container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.quiz-wrap {
+  width: 250px;
+  position: relative;
+  padding: 10px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.quiz-wrap .title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2955BB;
+}
+
+.quiz-wrap .description {
+  font-weight: 500;
+  font-family: "Times New Roman", Times, serif;
+  line-height: 20px;
+  font-size: 16px;
+}
+
+.quiz-wrap .bottom {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quiz-question-wrapper {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.quiz-question {
+  min-width: 350px;
+  position: relative;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.quiz-question .title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2955BB;
 }/*# sourceMappingURL=main.css.map */
