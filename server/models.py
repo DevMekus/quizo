@@ -20,9 +20,20 @@ class UserModel(db.Model):
 
 
 class QuizModel(db.Model):
+    __tablename__ = 'quizzes'
+    
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(120), nullable=False)
     description = db.Column(db.Text, nullable=True)
     questions = db.relationship('QuestionModel', backref='quiz', lazy=True)
 
+
+class QuestionModel(db.Model):
+    __tablename__ = 'questions'
     
+    id = db.Column(db.Integer, primary_key=True)
+    text = db.Column(db.String(255), nullable=False)
+    quiz_id = db.Column(db.Integer, db.ForeignKey('quizzes.id'), nullable=False)
+
+#Admin Model Goes here
+       
