@@ -3,13 +3,23 @@ from db import db
 from models import QuestionModel
 
 
-def get_question():
+def get_All_question():
     questions = QuestionModel.query.all()
-    questionList = [{'id':quiz.id, 'title':quiz.title, 'description':quiz.description} for question in questions]
+    questionList = [{'id':question.id, 
+                     'question':question.question, 
+                     'optionA':question.optionA,
+                     'optionB':question.optionB,
+                     'optionC':question.optionC,
+                     'optionCorrect':question.optionCorrect,
+                     'quiz_id':question.quiz_id,
+                     } for question in questions]
     return jsonify(questionList)
-    pass
+    
 
 def create_question():
+    pass
+
+def get_question():
     pass
 
 def update_question():
