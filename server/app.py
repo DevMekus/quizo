@@ -24,7 +24,7 @@ app.register_blueprint(auth_blueprint, url_prefix='/auth')
 app.register_blueprint(user_blueprint, url_prefix='/users')
 app.register_blueprint(admin_blueprint, url_prefix='/admin')
 app.register_blueprint(quiz_blueprint, url_prefix='/quiz')
-app.register_blueprint(question_blueprint, url_prefix='/question')
+app.register_blueprint(question_blueprint, url_prefix='/questions')
 
 if __name__ == '__main__':
   app.run(debug=True)

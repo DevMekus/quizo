@@ -25,7 +25,7 @@ class QuizModel(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(120), nullable=False)
     description = db.Column(db.Text, nullable=True)
-    questions = db.relationship('QuestionModel', backref='quiz', lazy=True)
+    # questions = db.relationship('QuestionModel', backref='quiz', lazy=True)
 
 
 class QuestionModel(db.Model):
@@ -37,7 +37,8 @@ class QuestionModel(db.Model):
     optionB = db.Column(db.String(100), nullable=False)
     optionC = db.Column(db.String(100), nullable=False)
     optionCorrect = db.Column(db.String(2), nullable=False)
-    quiz_id = db.Column(db.Integer, db.ForeignKey('quizzes.id'), nullable=False)
+    quiz_id = db.Column(db.String(11),nullable=False)
+    # quiz_id = db.Column(db.Integer, db.ForeignKey('quizzes.id'), nullable=False)
 
 class LogModel(db.Model):
      __tablename__ = 'logs'

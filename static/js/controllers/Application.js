@@ -98,4 +98,49 @@ export default class Application {
       }
     }
   }
+
+  newQuestion() {
+    const newQuestion = document.querySelector(".newQuestion");
+
+    if (newQuestion) {
+      newQuestion.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        postData(
+          `${Base.apiUrl}questions/question`,
+          JSON.stringify(utils.formData_to_Object(new FormData(newQuestion)))
+        ).then((response) => {
+          utils.feedback(response);
+          console.log(response);
+          // setTimeout(() => {
+          //   location.reload();
+          // }, 1500);
+        });
+      });
+    }
+  }
+
+  static delete_question() {
+    const quizDel = document.querySelectorAll(".qDel");
+
+    if (quizDel) {
+      for (let i = 0; i < quizDel.length; i++) {
+        quizDel[i].addEventListener("click", () => {
+          const id = quizDel[i].getAttribute("data-id");
+
+          if (confirm("Do you wish to continue?")) {
+            deleteData(`${Base.apiUrl}questions/question/${id}`).then(
+              (response) => {
+                utils.feedback(response);
+                console.log(response);
+                setTimeout(() => {
+                  location.reload();
+                }, 1500);
+              }
+            );
+          }
+        });
+      }
+    }
+  }
 }

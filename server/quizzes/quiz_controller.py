@@ -10,7 +10,7 @@ def create_quiz():
     data = request.get_json()
     title = data.get('title')
     description = data.get('description')
-    
+    #check if quiz Exists
     new_quiz = QuizModel(title=title, description=description)
     db.session.add(new_quiz)
     db.session.commit()
