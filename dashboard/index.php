@@ -1,5 +1,5 @@
 <?php
-$title = "USer Dashboard";
+$title = "User Dashboard";
 include("header.php");
 ?>
 <main class="dashboard-wrapper">

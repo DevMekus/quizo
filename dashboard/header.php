@@ -1,4 +1,5 @@
 <?php
+require_once('helperfile.php');
 require_once('../configs/config.php');
 ?>
 <!DOCTYPE html>

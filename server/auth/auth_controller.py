@@ -58,4 +58,11 @@ def login():
         'exp': datetime.datetime.utcnow()+datetime.timedelta(minutes=30)
     },app.config['SECRET_KEY'], algorithm='HS256')
     
-    return jsonify({'token':token, 'id':user.id,'status':'success'}),200
+    return jsonify(
+                    {
+                        'token':token, 
+                        'id':user.id,
+                        'status':'success',
+                        'role':'user'
+                    }
+                   ),200

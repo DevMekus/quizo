@@ -4,16 +4,34 @@ include("header.php");
 ?>
 <main class="auth-page">
     <div class="auth-con">
-        <div class="auth-title-con">
+        <div class="feedBack feedback"><!-- Feedback-->
+            <?php
+            if (isset($_GET['feedback']) && $_GET['alert'] == "d") {
+            ?>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <p class=""><?php echo $_GET['feedback']; ?>.</p>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+
+            <?php } else if (isset($_GET['feedback']) && $_GET['alert'] == "s") {
+
+            ?>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <p class=""><?php echo $_GET['feedback']; ?>.</p>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <?php  } ?>
+        </div><!-- Feedback ends-->
+        <div class="auth-title-con  mt-10">
             <h1>Login to account</h1>
             <p>Enter your credentials and login</p>
         </div>
-        <div class="feedback mt-10"></div>
+
         <div class="auth-body-con">
-            <form>
+            <form class="login_form">
                 <div class="box-input-wrapper">
                     <label for="email_address">Email address</label>
-                    <input type="email" placeholder="Ex: You@email.com" class="form-ctr" name="email_address" id="email_address" require />
+                    <input type="email" placeholder="Ex: You@email.com" class="form-ctr" name="email" id="email_address" require />
                 </div>
                 <div class="box-input-wrapper">
                     <label for="password">Password</label>

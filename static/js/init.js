@@ -1,4 +1,4 @@
-import Application from "./controllers/Application";
+import Application from "./controllers/Application.js";
 
 function initializeAndRunAllMethods(classInstance) {
   const methods = Object.getOwnPropertyNames(

@@ -1,5 +1,6 @@
 # Main application entry point
 from flask import Flask
+from flask_cors import CORS
 from flask_migrate import Migrate
 from db import  db
 from auth.auth_routes import auth_blueprint
@@ -9,6 +10,10 @@ from quizzes.quiz_routes import quiz_blueprint
 
 app = Flask(__name__)
 app.config.from_object('config.Config')
+
+CORS(app)
+# CORS(app, resources={r"/auth/*": {"origins": "http://localhost"}})
+
 
 db.init_app(app)
 
