@@ -26,9 +26,9 @@ def token_required(f):
 
 def register():
     data = request.get_json()
-    username = data.get['username']
-    password = data.get['password']
-    email = data.get['email_address']
+    username = data.get('username')
+    password = data.get('password')
+    email = data.get('email')
     
     if not username or not password or not email:
         return jsonify({'message':'Missing data','status':'error'}),400

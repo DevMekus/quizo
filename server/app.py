@@ -1,5 +1,6 @@
 # Main application entry point
 from flask import Flask
+from flask_migrate import Migrate
 from db import  db
 from auth.auth_routes import auth_blueprint
 from users.user_routes import user_blueprint
@@ -10,6 +11,8 @@ app = Flask(__name__)
 app.config.from_object('config.Config')
 
 db.init_app(app)
+
+migrate = Migrate(app, db)
 
 app.register_blueprint(auth_blueprint, url_prefix='/auth')
 app.register_blueprint(user_blueprint, url_prefix='/users')
