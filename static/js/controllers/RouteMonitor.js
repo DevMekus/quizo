@@ -9,12 +9,19 @@ export default class RouteCrawler {
       const token = Base.token;
       console.log(token);
       console.log(token["token"]);
-      fetchData(`${Base.apiUrl}quiz/quiz`, {
-        headers: {
-          Authorization: `Bearer ${token["token"]}`,
-        },
-      }).then((data) => {
+      fetchData(`${Base.apiUrl}quiz/quiz`, {}).then((data) => {
         console.log(data);
+      });
+    }
+  }
+
+  userQuiz(quiz=null){
+    let total =0
+    const userid = Base.token['id']
+    
+    if(quiz!=null){
+      quiz.forEach(item => {
+       
       });
     }
   }
