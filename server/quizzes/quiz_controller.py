@@ -9,7 +9,7 @@ def create_quiz():
     title = data.get('title')
     description = data.get('description')
     
-    new_quiz = QuestionModel(title=title, description=description)
+    new_quiz = QuizModel(title=title, description=description)
     db.session.add(new_quiz)
     db.session.commit()
     
