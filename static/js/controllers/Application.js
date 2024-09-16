@@ -52,11 +52,7 @@ export default class Application {
   setToken(response = null) {
     if (response != null) {
       if (response["status"] == "success") {
-        const token = {
-          userid: response.id,
-          token: response.token,
-        };
-        sessionStorage.setItem("token", JSON.stringify(token));
+        sessionStorage.setItem("token", JSON.stringify(response));
       }
     }
   }

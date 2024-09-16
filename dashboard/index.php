@@ -9,7 +9,7 @@ include("header.php");
         <section class="content-centered">
             <div class="page-title-con">
                 <h2 class="page-title">Welcome back</h2>
-                <h4 class="color-primary">Hercules CHukwu</h4>
+                <h4 class="color-primary username"></h4>
                 <p class="page-description">overview of the user’s activities, quizzes, and general site navigation.</p>
             </div>
             <section class="mt-10 container-fluid">

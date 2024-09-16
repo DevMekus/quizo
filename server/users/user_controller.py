@@ -1,8 +1,8 @@
  # User business logic
 from flask import jsonify
-from auth.auth_controller import token_required
+# from auth.auth_controller import token_required
 
-@token_required
+# @token_required
 def get_profile(current_user):
     return jsonify({
         'id': current_user.id,
@@ -12,6 +12,6 @@ def get_profile(current_user):
     })
 
 #Update user profile
-@token_required
+# @token_required
 def update_user(current_user):
     pass
