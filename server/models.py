@@ -25,7 +25,7 @@ class QuizModel(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(120), nullable=False)
     description = db.Column(db.Text, nullable=True)
-    questions = db.relationship('QuestionModel', backref='quiz', lazy=True)
+    # questions = db.relationship('QuestionModel', backref='quiz', lazy=True)
 
 
 class QuestionModel(db.Model):

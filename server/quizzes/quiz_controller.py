@@ -15,16 +15,17 @@ def create_quiz():
     db.session.add(new_quiz)
     db.session.commit()
     
-    return jsonify({'message':'Quiz created successfully','status':'success'}),201
+    return jsonify({'message':'Quiz created successfully',
+                    'status':'success'}),201
 
 # @token_required
 def list_quizzes():    
-    quizzes = QuizModel.query.all()
+    quizzes = QuizModel.query.order_by(QuizModel.id.desc()).all()
     quizList = [{'id':quiz.id, 'title':quiz.title, 'description':quiz.description} for quiz in quizzes]
     return jsonify(quizList)
 
 # @token_required
-def get_quiz(current_user, quiz_id):
+def get_quiz(quiz_id):
     quiz = QuizModel.query.filter_by(id=quiz_id).first()
     if not quiz:
         return jsonify({'message':'Quiz not found','status':'error'}), 404
@@ -34,3 +35,16 @@ def get_quiz(current_user, quiz_id):
         'description':quiz.description,
         'status':'success'
     })
+
+def delete_quiz(quiz_id):
+    quiz = QuizModel.query.filter_by(id=quiz_id).first()
+    if not quiz:
+        return jsonify({'message': 'Quiz not found', 'status': 'error'}), 404
+    try:
+        # Delete the quiz from the database
+        db.session.delete(quiz)
+        db.session.commit()
+        return jsonify({'message': 'Quiz deleted successfully', 'status': 'success'}), 200
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({'message': 'Failed to delete quiz', 'status': 'error', 'error': str(e)}), 500

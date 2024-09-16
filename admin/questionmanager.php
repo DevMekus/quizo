@@ -23,8 +23,9 @@ include("header.php");
                             <h4 class="page-title">Manage Quiz</h4>
                             <p class="page-description">Listing all available quizzes and filter them by title or date</p>
                         </div>
-                        <div class="mt-10 activities-con">
-                            <table class="table table-hover">
+                        <div class="mt-10 activities-con quiz_table">
+                            <div class="quiz_table"></div>
+                            <!-- <table class="table table-hover">
                                 <thead>
                                     <tr class="tableHead">
                                         <th scope="col">#</th>
@@ -48,7 +49,7 @@ include("header.php");
                                         </td>
                                     </tr>
                                 </tbody>
-                            </table>
+                            </table> -->
 
                         </div>
                     </div>

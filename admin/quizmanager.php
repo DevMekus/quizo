@@ -16,6 +16,7 @@ include("header.php");
                 <button class="button button-primary radius-5" data-bs-toggle="modal" data-bs-target="#newQiz">Create Quiz</button>
                 <p class="small-p">Add a new quiz with title, description, and questions.</p>
             </section>
+            <div class="feedback mt-10"></div>
             <section class="manage-quiz mt-10 container">
                 <div class="row">
                     <div class="col-sm-12">
@@ -24,7 +25,8 @@ include("header.php");
                             <p class="page-description">Listing all available quizzes and filter them by title or date</p>
                         </div>
                         <div class="mt-10 activities-con">
-                            <table class="table table-hover">
+                            <div class="quiz_table"></div>
+                            <!-- <table class="table table-hover">
                                 <thead>
                                     <tr class="tableHead">
                                         <th scope="col">#</th>
@@ -52,7 +54,7 @@ include("header.php");
                                         </td>
                                     </tr>
                                 </tbody>
-                            </table>
+                            </table> -->
 
                         </div>
                     </div>
@@ -70,21 +72,20 @@ include("header.php");
                 <h1 class="modal-title fs-5" id="exampleModalLabel">New Quiz</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form>
+            <form class="newQuiz" method="POST">
                 <div class="modal-body">
-
                     <div class="box-input-wrapper">
                         <label for="title">Quiz Title</label>
-                        <input type="text" placeholder="Ex: Marketing" class="form-ctr" name="quiz_title" id="title" require />
+                        <input type="text" placeholder="Ex: Marketing" class="form-ctr" name="title" id="title" required />
                     </div>
                     <div class="box-input-wrapper">
                         <label for="description">Description</label>
-                        <input type="text" placeholder="Ex: Description of marke...." class="form-ctr" name="quiz_description" id="description" require />
+                        <input type="text" placeholder="Ex: Description of marke...." class="form-ctr" name="description" id="description" required />
                     </div>
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="button button-primary radius-5">Create Quiz</button>
+                    <button type="submit" class="button button-primary radius-5">Create Quiz</button>
                 </div>
             </form>
         </div>

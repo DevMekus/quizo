@@ -19,7 +19,7 @@ include("header.php");
                             <div class="card-body">
                                 <h4 class="card-title"><span class="fas fa-question-circle icon mr-10"></span>Quiz</h4>
                                 <p class="small-p">Total number of quiz</p>
-                                <h2>0</h2>
+                                <h2 class="quizCount"></h2>
                             </div>
                         </div>
                     </div>
@@ -28,11 +28,11 @@ include("header.php");
                             <div class="card-body">
                                 <h4 class="card-title"><span class="fas fa-users icon mr-10"></span>Users</h4>
                                 <p class="small-p">Total number of users</p>
-                                <h2>0</h2>
+                                <h2 class="userCount"></h2>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-4">
+                    <!-- <div class="col-sm-4">
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title"><span class="fas fa-clipboard-list icon mr-10"></span>Questions</h4>
@@ -40,7 +40,7 @@ include("header.php");
                                 <h2>0</h2>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </section>
             <section class="mt-10 recent-activities container">

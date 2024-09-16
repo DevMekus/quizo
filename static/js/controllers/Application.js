@@ -56,4 +56,46 @@ export default class Application {
       }
     }
   }
+
+  newQuiz() {
+    const newQuiz = document.querySelector(".newQuiz");
+
+    if (newQuiz) {
+      newQuiz.addEventListener("submit", (e) => {
+        e.preventDefault();
+        postData(
+          `${Base.apiUrl}quiz/quiz`,
+          JSON.stringify(utils.formData_to_Object(new FormData(newQuiz)))
+        ).then((response) => {
+          utils.feedback(response);
+          console.log(response);
+          setTimeout(() => {
+            location.reload();
+          }, 1500);
+        });
+      });
+    }
+  }
+
+  static delete_quiz() {
+    const quizDel = document.querySelectorAll(".quizDel");
+
+    if (quizDel) {
+      for (let i = 0; i < quizDel.length; i++) {
+        quizDel[i].addEventListener("click", () => {
+          const id = quizDel[i].getAttribute("data-id");
+          console.log("cicking to delete " + id);
+          if (confirm("Do you wish to continue?")) {
+            deleteData(`${Base.apiUrl}quiz/quiz/${id}`).then((response) => {
+              utils.feedback(response);
+              console.log(response);
+              setTimeout(() => {
+                location.reload();
+              }, 1500);
+            });
+          }
+        });
+      }
+    }
+  }
 }
