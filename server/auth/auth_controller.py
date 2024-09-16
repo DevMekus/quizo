@@ -44,11 +44,13 @@ def register():
 
 def login():
     data = request.get_json()
-    email = data.get('email')
-    password = data.get('password')
+    # email = data.get('email')
+    # password = data.get('password')
     
-    user = UserModel.query.filter_by(email=email).first()
-    if not user or check_password_hash(user.password, password):
+    
+    user = UserModel.query.filter_by(email=data['email']).first()
+   
+    if not user or not check_password_hash(user.password, data['password']):
         return jsonify({'message': 'Account not found','status':'error'}),401
     
     token = jwt.encode({
@@ -56,4 +58,4 @@ def login():
         'exp': datetime.datetime.utcnow()+datetime.timedelta(minutes=30)
     },app.config['SECRET_KEY'], algorithm='HS256')
     
-    return jsonify({'token':token,'status':'success'}),200
+    return jsonify({'token':token, 'id':user.id,'status':'success'}),200
