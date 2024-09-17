@@ -141,6 +141,7 @@ export default class RouteCrawler {
       fetchData(`${Base.apiUrl}questions/all`).then((data) => {
         console.log(data);
         this.display_question_table(data);
+        this.display_quiz_questions(data);
       });
     }
   }
@@ -195,6 +196,52 @@ export default class RouteCrawler {
       }
       htmlUi.innerHTML = display;
       Application.delete_question();
+    }
+  }
+
+  display_quiz_questions(questions = null) {
+    if (
+      questions != null &&
+      Base.pageUrl.includes("/dashboard/take-quiz.php")
+    ) {
+      const url = new URL(window.location.href);
+      const params = new URLSearchParams(url.search);
+      const quiz_id = params.get("id");
+      let htmlUi = document.querySelector(".q_table");
+      let display = ``;
+      let counter = 0;
+
+      questions.forEach((question) => {
+        if (question.quiz_id == quiz_id) {
+          counter++;
+          display += `
+               <div class="quiz-question" data-question-id="${question.id}">
+                  <h5 class="title">(${counter}) ${question.question}</h5>
+                  <div class="form-check">
+                      <input class="form-check-input" value="${question.optionA}" type="radio" name="${question.id}" id="${question.optionA}">
+                      <label class="form-check-label" for="${question.optionA}">
+                          ${question.optionA}
+                      </label>
+                  </div>
+                  <div class="form-check">
+                      <input class="form-check-input" value="${question.optionB}" type="radio" name="${question.id}" id="${question.optionB}">
+                      <label class="form-check-label" for="${question.optionB}">
+                          ${question.optionB}
+                      </label>
+                  </div>
+                  <div class="form-check">
+                      <input class="form-check-input" type="radio" value="${question.optionC}" name="${question.id}" id="${question.optionC}">
+                      <label class="form-check-label" for="${question.optionC}">
+                          ${question.optionC}
+                      </label>
+                  </div>
+                  <input type='hidden' value="${question.optionCorrect}" name="optionCorrect" />
+                 
+              </div>
+          `;
+        }
+      });
+      htmlUi.innerHTML = display;
     }
   }
 

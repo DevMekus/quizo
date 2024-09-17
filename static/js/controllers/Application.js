@@ -143,4 +143,40 @@ export default class Application {
       }
     }
   }
+
+  submitQuiz() {
+    const quizForm = document.getElementById("quiz-form");
+    if (quizForm) {
+      quizForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        let totalQuestions = document.querySelectorAll(".quiz-question").length;
+        let correctAnswers = 0;
+
+        document
+          .querySelectorAll(".quiz-question")
+          .forEach((questionDiv, index) => {
+            const questionNumber = index + 1;
+
+            const selectedOption = document.querySelector(
+              `input[name="question${questionNumber}"]:checked`
+            );
+
+            const correctAnswer = document.querySelector(
+              `input[name="optionCorrect${questionNumber}"]`
+            );
+            
+            if (correctAnswer) {
+              correctAnswer.value;
+            }
+
+            if (selectedOption && selectedOption.value === correctAnswer) {
+              correctAnswers++;
+            }
+          });
+
+        alert(`You got ${correctAnswers} out of ${totalQuestions} correct.`);
+      });
+    }
+  }
 }
