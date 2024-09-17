@@ -18,8 +18,8 @@ include("header.php");
                         <div class="card active">
                             <div class="card-body">
                                 <h4 class="card-title"><span class="fas fa-question-circle icon mr-10"></span>Quiz</h4>
-                                <p class="small-p">Total number of quiz</p>
-                                <h2>0</h2>
+                                <p class="small-p">Total number of quiz available</p>
+                                <h2 class="quizCount"></h2>
                             </div>
                         </div>
                     </div>

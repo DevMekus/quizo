@@ -101,6 +101,7 @@
 
 .quiz-wrap{
     width: 250px;
+    height: 260px;
     position: relative;
     padding: 10px;
     border: 1px solid grey;
@@ -123,7 +124,8 @@
 
 .quiz-wrap .bottom{
     width: 100%;
-    position: relative;
+    position: absolute;
+    bottom: 10px;
     display: flex;
     justify-content: center;
     align-items: center;

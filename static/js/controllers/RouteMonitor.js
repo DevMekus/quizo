@@ -17,6 +17,7 @@ export default class RouteCrawler {
         console.log(data);
         this.countQuiz(data);
         this.display_quiz_table(data);
+        this.display_quiz_card(data);
         this.quizSelect(data);
       });
     }
@@ -81,6 +82,10 @@ export default class RouteCrawler {
               </tr>
           `;
         });
+        display += `
+          </tbody>
+          </table>
+        `;
       } else {
         display += `
           <h5>No Quiz Available</h5>
@@ -90,6 +95,42 @@ export default class RouteCrawler {
       htmlUi.innerHTML = display;
       Application.delete_quiz();
     }
+  }
+
+  display_quiz_card(quizzes = null) {
+    if (quizzes != null && Base.pageUrl.includes("/dashboard/quiz.php")) {
+      let display = ``;
+      let htmlUi = document.querySelector(".quiz-container");
+
+      if (htmlUi && quizzes.length > 0) {
+        quizzes.forEach((quiz) => {
+          display += `
+            <div class="quiz-wrap">
+                    <h5 class="title">${quiz.title}</h5>
+                    <p class="description">${quiz.description}</p>
+                    <ul>
+                        <li>Questions: 20</li>
+                        <li>Level: Easy</li>
+                    </ul>
+                    <div class="bottom">
+                        <a href="take-quiz.php?id=${quiz.id}" class="button button-primary radius-5">Take Quiz</a>
+                    </div>              
+              </div>
+          `;
+        });
+      } else {
+        display += `
+          <h5>No Quiz Available</h5>
+          <p>We do not have quiz available for students.</p>
+        `;
+      }
+      htmlUi.innerHTML = display;
+      Application.delete_quiz();
+    }
+  }
+
+  countQuizQuestion(quiz_id, questions) {
+    return 0;
   }
 
   get_all_questions() {
@@ -142,6 +183,10 @@ export default class RouteCrawler {
               </tr>
           `;
         });
+        display += `
+        </tbody>
+        </table>
+      `;
       } else {
         display += `
           <h5>No Questions Available</h5>
