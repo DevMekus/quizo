@@ -3,15 +3,18 @@ from flask import request, jsonify
 from datetime import datetime
 from db import db
 from models import ResultModel, QuizModel
-# from auth.auth_controller import token_required
-
 
 
 def create_quiz():
     data = request.get_json()
     title = data.get('title')
     description = data.get('description')
+    
     #check if quiz Exists
+    quiz = QuizModel.query.filter_by(title=title).first()
+    if quiz:
+        return jsonify({'message':'Quiz already exist','status':'error'}), 409
+    
     new_quiz = QuizModel(title=title, description=description)
     db.session.add(new_quiz)
     db.session.commit()
@@ -50,7 +53,7 @@ def delete_quiz(quiz_id):
         db.session.rollback()
         return jsonify({'message': 'Failed to delete quiz', 'status': 'error', 'error': str(e)}), 500
 
-
+#Handling the Controllers of the quiz Results
 def quiz_results():
     results = ResultModel.query.order_by(ResultModel.id.desc()).all()
     resultList = [{'id':result.id, 
@@ -60,13 +63,12 @@ def quiz_results():
     return jsonify(resultList)
 
 def create_result():
-    data = request.get_json()
-    
+    data = request.get_json()    
     new_result = ResultModel(quiz_id=data['quiz_id'], user_id=data['userid'], score=data['score'])    
     db.session.add(new_result)
     db.session.commit()
     
-    return jsonify({'message': 'Quiz result added successfully', 'status': 'success'}), 201
+    return jsonify({'message': 'Quiz completed.', 'status': 'success'}), 201
 
 def delete_result(result_id):
     result = ResultModel.query.filter_by(id=result_id).first()

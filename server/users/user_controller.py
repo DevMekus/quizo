@@ -3,15 +3,10 @@ from flask import jsonify
 from models import UserModel
 from flask_cors import cross_origin
 
-# @token_required
+
 def get_profile():
     pass
-    # return jsonify({
-    #     'id': current_user.id,
-    #     'username':current_user.username,
-    #     'email': current_user.email,
-    #     'role':current_user.role
-    # })
+    
 
 @cross_origin(origin='http://localhost')
 def getUsers():
@@ -20,7 +15,8 @@ def getUsers():
     return jsonify(userList)
     
 
-#Update user profile
-# @token_required
-def update_user(current_user):
+def update_user(user_id):
+    pass
+
+def delete_user(user_id):
     pass
