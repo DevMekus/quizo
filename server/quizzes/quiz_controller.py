@@ -1,7 +1,7 @@
  # Quiz business logic
 from flask import request, jsonify
 from db import db
-from models import QuestionModel, QuizModel
+from models import ResultModel, QuizModel
 # from auth.auth_controller import token_required
 
 
@@ -48,3 +48,21 @@ def delete_quiz(quiz_id):
     except Exception as e:
         db.session.rollback()
         return jsonify({'message': 'Failed to delete quiz', 'status': 'error', 'error': str(e)}), 500
+
+
+def quiz_results():
+    results = ResultModel.query.order_by(ResultModel.id.desc()).all()
+    resultList = [{'id':result.id, 
+                 'userid':result.user_id, 
+                 'quiz_id':result.quiz_id, 
+                 'score':result.score} for result in results]
+    return jsonify(resultList)
+
+def create_result():
+    data = request.get_json()
+    new_result = ResultModel(quiz_id=data['quiz_id'], user_id=data['userid'], score=data['score'])
+    
+    db.session.add(new_result)
+    db.session.commit()
+    
+    return jsonify({'message': 'Quiz result added successfully', 'status': 'success'}), 201

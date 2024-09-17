@@ -46,6 +46,13 @@ class LogModel(db.Model):
      user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
      message = db.Column(db.String(80), nullable=False)
 
+class ResultModel(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    quiz_id = db.Column(db.String(11),nullable=False)
+    user_id = db.Column(db.String(11),nullable=False)
+    score = db.Column(db.String(11),nullable=False)
+    
+
 class AdminModel(db.Model):
     __tablename__ = 'controls'
     
