@@ -5,6 +5,7 @@ const utils = new Utility();
 
 /**Monitors the routes and run special functions */
 export default class RouteCrawler {
+  static userData = null;
   /**
    * Quiz Routes and functions
    */
@@ -14,7 +15,6 @@ export default class RouteCrawler {
       Base.pageUrl.includes("/admin/")
     ) {
       fetchData(`${Base.apiUrl}quiz/all`).then((data) => {
-        console.log(data);
         this.countQuiz(data);
         this.display_quiz_table(data);
         this.display_quiz_card(data);
@@ -139,7 +139,6 @@ export default class RouteCrawler {
       Base.pageUrl.includes("/admin/")
     ) {
       fetchData(`${Base.apiUrl}questions/all`).then((data) => {
-        console.log(data);
         this.display_question_table(data);
         this.display_quiz_questions(data);
       });
@@ -300,12 +299,12 @@ export default class RouteCrawler {
       Base.pageUrl.includes("/admin/quiz-result.php")
     ) {
       fetchData(`${Base.apiUrl}quiz/results`).then((data) => {
-        console.log(data);
         this.display_result_table(data);
       });
     }
   }
-  display_result_table(results = null) {
+
+  async display_result_table(results = null) {
     if (results != null) {
       let display = ``;
       let htmlUi = document.querySelector(".r_table");
@@ -316,25 +315,48 @@ export default class RouteCrawler {
             <table class="table table-hover">
                 <thead>
                     <tr class="tableHead">
-                         <th scope="col">#</th>
+                         <th scope="col">#</th>`;
+        if (page == "admin") {
+          display += `<th scope="col">Student</th>`;
+        }
+        display += `
                           <th scope="col">Quiz</th>
                           <th scope="col">Score</th>
-                          <th scope="col">Date</th>
-                          <th scope="col"></th>
+                         
                     </tr>
                 </thead>
                 <tbody>
         `;
+        const users = await Base.getUsers();
+        const quizzes = await Base.getQuiz();
 
         results.forEach((result) => {
           if (result.userid == Base.token["id"]) {
             display += `
             <tr class="pointer trow">
-                <th scope="row">${result.id}</th>
-                <td>${result.quiz_id}</td>
-                <td>${result.score}</td>
-                <td>                   
-                </td>
+                <th scope="row">${result.id}</th>`;
+            if (page == "admin") {
+              let userName = null;
+              if (users != null) {
+                users.forEach((user) => {
+                  if ((user.id = result.userid)) {
+                    userName = user.username;
+                  }
+                });
+              }
+              display += `<th scope="col">${userName}</th>`;
+            }
+            let quizName = null;
+            if (quizzes != null) {
+              quizzes.forEach((quiz) => {
+                if (quiz.id == result.quiz_id) {
+                  quizName = quiz.title;
+                }
+              });
+            }
+            display += `
+                <td>${quizName}</td>
+                <td>${result.score}</td>                
             </tr>
         `;
           }
