@@ -47,6 +47,8 @@ class LogModel(db.Model):
      message = db.Column(db.String(80), nullable=False)
 
 class ResultModel(db.Model):
+    __tablename__ = 'results'
+     
     id = db.Column(db.Integer, primary_key=True)
     quiz_id = db.Column(db.String(11),nullable=False)
     user_id = db.Column(db.String(11),nullable=False)

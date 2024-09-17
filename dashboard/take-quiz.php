@@ -7,13 +7,18 @@ include("header.php");
     <div class="page-content">
         <?php include("navbar.php"); ?>
         <section class="content-centered">
-            <div class="page-title-con">
-                <h2 class="page-title">Take Quiz
-                </h2>
-                <p class="page-description">users participate in a quiz.
-                </p>
+            <div class="score-flex">
+                <div class="page-title-con">
+                    <h2 class="page-title">Take Quiz
+                    </h2>
+                    <p class="page-description">users participate in a quiz.
+                    </p>
+                </div>
+                <div class="score-board">
+                </div>
             </div>
-            <div class="quiz-question-wrapper">
+            <div class="feedback mt-10"></div>
+            <div class="quiz-question-wrapper mt-10">
                 <form class="quiz-question-wrapper" id="quiz-form">
                     <div class="q_table quiz-question-wrapper"></div>
 

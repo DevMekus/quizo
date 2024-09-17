@@ -565,4 +565,19 @@ h6 {
   font-size: 20px;
   font-weight: bold;
   color: #2955BB;
+}
+
+.score-flex {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: normal;
+  grid-area: 30px;
+  flex-wrap: wrap;
+}
+
+.score-flex .score-board {
+  width: 250px;
+  position: relative;
 }/*# sourceMappingURL=main.css.map */

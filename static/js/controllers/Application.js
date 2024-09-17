@@ -146,6 +146,11 @@ export default class Application {
 
   submitQuiz() {
     const quizForm = document.getElementById("quiz-form");
+    const scoreBoard = document.querySelector(".score-board");
+    const url = new URL(window.location.href);
+    const params = new URLSearchParams(url.search);
+    const quiz_id = params.get("id");
+
     if (quizForm) {
       quizForm.addEventListener("submit", function (event) {
         event.preventDefault();
@@ -167,7 +172,7 @@ export default class Application {
             );
 
             if (correctAnswer) {
-              correctAnswer.value;
+              correctAnswer = correctAnswer.value;
             }
 
             if (selectedOption && selectedOption.value === correctAnswer) {
@@ -175,12 +180,42 @@ export default class Application {
             }
           });
 
-        alert(`You got ${correctAnswers} out of ${totalQuestions} correct.`);
+        scoreBoard.innerHTML = ``;
+        scoreBoard.innerHTML = `
+          <div class="card">
+                <div class="card-body">
+                    <h5>Score</h5>
+                    <p class="page-description">Your score on quiz</p>
+                    <h1>${correctAnswers}/${totalQuestions}</h1>
+                </div>
+            </div>
+        `;
+        const data = {
+          quiz_id: quiz_id,
+          userid: Base.token["id"],
+          score: correctAnswers,
+        };
+        console.log(data);
+        postData(`${Base.apiUrl}quiz/result`, JSON.stringify(data)).then(
+          (response) => {
+            utils.feedback(response);           
+          }
+        );
       });
     }
   }
-  postQuizResult(postdata = null) {
-    if (postdata != null) {
-    }
-  }
+
+  // postQuizResult(data = null) {
+  //   if (data != null) {
+  //     postData(`${Base.apiUrl}quiz/result`, JSON.stringify(data)).then(
+  //       (response) => {
+  //         utils.feedback(response);
+  //         console.log(response);
+  //         // setTimeout(() => {
+  //         //   location.reload();
+  //         // }, 1500);
+  //       }
+  //     );
+  //   }
+  // }
 }

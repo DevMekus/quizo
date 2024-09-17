@@ -210,10 +210,11 @@ export default class RouteCrawler {
       let htmlUi = document.querySelector(".q_table");
       let display = ``;
       let counter = 0;
-
+      display += `<div class="data-wrappings" data-quiz="${quiz_id}">`;
       questions.forEach((question) => {
         if (question.quiz_id == quiz_id) {
           counter++;
+
           display += `
                <div class="quiz-question" data-question-id="${question.id}">
                   <h5 class="title">(${counter}) ${question.question}</h5>
@@ -241,6 +242,7 @@ export default class RouteCrawler {
           `;
         }
       });
+      display += `</div>`;
       htmlUi.innerHTML = display;
     }
   }

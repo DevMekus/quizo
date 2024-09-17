@@ -66,3 +66,16 @@ def create_result():
     db.session.commit()
     
     return jsonify({'message': 'Quiz result added successfully', 'status': 'success'}), 201
+
+def delete_result(result_id):
+    result = ResultModel.query.filter_by(id=result_id).first()
+    if not result:
+        return jsonify({'message': 'Result not found', 'status': 'error'}), 404
+    try:
+        # Delete the quiz from the database
+        db.session.delete(result)
+        db.session.commit()
+        return jsonify({'message': 'Result deleted successfully', 'status': 'success'}), 200
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({'message': 'Failed to delete result', 'status': 'error', 'error': str(e)}), 500
