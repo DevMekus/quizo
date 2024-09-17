@@ -50,7 +50,7 @@ include("header.php");
                             <h4 class="page-title">Recent activities</h4>
                             <p class="page-description">Manage site recent activities</p>
                         </div>
-                        <div class="mt-10 activities-con">
+                        <!-- <div class="mt-10 activities-con">
                             <table class="table table-hover">
                                 <thead>
                                     <tr class="tableHead">
@@ -78,7 +78,7 @@ include("header.php");
                                 </tbody>
                             </table>
 
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </section>

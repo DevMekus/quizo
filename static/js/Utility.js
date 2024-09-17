@@ -36,18 +36,14 @@ export default class Utility {
       for (let i = 0; i < feedback.length; i++) {
         feedback[i].innerHTML = ``;
         feedback[i].innerHTML = `
-                <div class="info-box ${
-                  response["status"] == "success"
-                    ? "info-box-success"
-                    : "info-box-error"
-                }">
-                 <div class="flex">
-                    <h5 class="title">
-                      ${response["title"]} !
-                    </h5>
-                 </div>
-                    <p>${response["message"]}</p>
-                </div>`;
+
+         <div class="alert alert-${
+           response["status"] ? "success" : "danger"
+         } alert-dismissible fade show" role="alert">
+              <p class="">${response["message"]}.</p>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+               `;
       }
     }
   }

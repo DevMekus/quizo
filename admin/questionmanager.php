@@ -23,7 +23,7 @@ include("header.php");
                             <h4 class="page-title">Manage Quiz</h4>
                             <p class="page-description">Listing all available quizzes and filter them by title or date</p>
                         </div>
-                        <div class="mt-10 activities-con quiz_table">
+                        <div class="mt-10 activities-con quiz_table scrollable">
                             <div class="q_table"></div>
                         </div>
                     </div>

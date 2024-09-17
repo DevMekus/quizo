@@ -206,4 +206,43 @@ export default class Application {
   }
 
   static delete_result() {}
+
+  openSideBar() {
+    const toggleBtn = document.querySelector(".toggleSide");
+    const sideBar = document.querySelector(".sidebar");
+
+    if (toggleBtn) {
+      toggleBtn.addEventListener("click", () => {
+        sideBar.classList.add("show-sidebar");
+      });
+    }
+  }
+
+  closeSideBar() {
+    const closeBtn = document.querySelector(".closebtn");
+    const sideBar = document.querySelector(".sidebar");
+
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        sideBar.classList.remove("show-sidebar");
+      });
+    }
+  }
+  logout() {
+    const logout = document.querySelector(".logout");
+    if (logout) {
+      logout.addEventListener("click", () => {
+        if (confirm("Do you wish to logout?")) {
+          fetchData(`${Base.appUrl}configs/usersession.php?logout=y`).then(
+            (response) => {
+              utils.feedback(response);
+              if (response["status"] == "success") {
+                window.location.href = `${Base.appUrl}auth/login.php?feedback=Logout successful&alert=s`;
+              }
+            }
+          );
+        }
+      });
+    }
+  }
 }

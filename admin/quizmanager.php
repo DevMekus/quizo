@@ -25,37 +25,7 @@ include("header.php");
                             <p class="page-description">Listing all available quizzes and filter them by title or date</p>
                         </div>
                         <div class="mt-10 activities-con">
-                            <div class="quiz_table"></div>
-                            <!-- <table class="table table-hover">
-                                <thead>
-                                    <tr class="tableHead">
-                                        <th scope="col">#</th>
-                                        <th scope="col">Title</th>
-                                        <th scope="col">Description</th>
-                                        <th scope="col">Questions </th>
-                                        <th scope="col">Date</th>
-                                        <th scope="col"></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="pointer trow">
-                                        <th scope="row">3</th>
-                                        <td>Test Quiz</td>
-                                        <td>Description of test quiz</td>
-                                        <td>20</td>
-                                        <th scope="row">2hours ago</th>
-                                        <td>
-                                            <button class="btn btn-primary btn-sm click-effect" data-bs-toggle="modal" data-bs-target="#editQiz">
-                                                <i class="fas fa-edit"></i>
-                                            </button>
-                                            <button class="btn btn-danger btn-sm click-effect">
-                                                <i class="fas fa-times"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table> -->
-
+                            <div class="quiz_table scrollable"></div>
                         </div>
                     </div>
                 </div>

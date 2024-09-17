@@ -28,9 +28,23 @@ if (isset($_GET['session'])) {
         echo json_encode(
             [
                 'message' => 'Session failed',
-                'status' => 'success',
+                'status' => 'error',
                 'title' => 'Session Error'
             ]
         );
     }
+}
+
+if (isset($_GET['logout'])) {
+    foreach ($_SESSION as $session) {
+        unset($session);
+    }
+    session_destroy();
+    echo json_encode(
+        [
+            'message' => 'Session destroyed',
+            'status' => 'success',
+            'title' => 'Session'
+        ]
+    );
 }
