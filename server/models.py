@@ -1,5 +1,6 @@
  # Database models for User, Admin, Quiz, etc.
 from db import db
+from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
@@ -53,6 +54,7 @@ class ResultModel(db.Model):
     quiz_id = db.Column(db.String(11),nullable=False)
     user_id = db.Column(db.String(11),nullable=False)
     score = db.Column(db.String(11),nullable=False)
+    # create_at = db.Column(db.DateTime, default=datetime.utcnow)
     
 
 class AdminModel(db.Model):

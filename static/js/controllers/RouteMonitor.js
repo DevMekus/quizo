@@ -294,5 +294,63 @@ export default class RouteCrawler {
     }
   }
 
-  getQuiz() {}
+  getQuizResults() {
+    if (
+      Base.pageUrl.includes("/dashboard/quiz-result.php") ||
+      Base.pageUrl.includes("/admin/quiz-result.php")
+    ) {
+      fetchData(`${Base.apiUrl}quiz/results`).then((data) => {
+        console.log(data);
+        this.display_result_table(data);
+      });
+    }
+  }
+  display_result_table(results = null) {
+    if (results != null) {
+      let display = ``;
+      let htmlUi = document.querySelector(".r_table");
+
+      if (htmlUi && results.length > 0) {
+        const page = htmlUi.getAttribute("data-page");
+        display += `
+            <table class="table table-hover">
+                <thead>
+                    <tr class="tableHead">
+                         <th scope="col">#</th>
+                          <th scope="col">Quiz</th>
+                          <th scope="col">Score</th>
+                          <th scope="col">Date</th>
+                          <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+        `;
+
+        results.forEach((result) => {
+          if (result.userid == Base.token["id"]) {
+            display += `
+            <tr class="pointer trow">
+                <th scope="row">${result.id}</th>
+                <td>${result.quiz_id}</td>
+                <td>${result.score}</td>
+                <td>                   
+                </td>
+            </tr>
+        `;
+          }
+        });
+        display += `
+        </tbody>
+        </table>
+      `;
+      } else {
+        display += `
+          <h5>No Results Available</h5>
+          <p>We do not have result available for students.</p>
+        `;
+      }
+      htmlUi.innerHTML = display;
+      Application.delete_result();
+    }
+  }
 }

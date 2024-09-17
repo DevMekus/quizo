@@ -198,24 +198,12 @@ export default class Application {
         console.log(data);
         postData(`${Base.apiUrl}quiz/result`, JSON.stringify(data)).then(
           (response) => {
-            utils.feedback(response);           
+            utils.feedback(response);
           }
         );
       });
     }
   }
 
-  // postQuizResult(data = null) {
-  //   if (data != null) {
-  //     postData(`${Base.apiUrl}quiz/result`, JSON.stringify(data)).then(
-  //       (response) => {
-  //         utils.feedback(response);
-  //         console.log(response);
-  //         // setTimeout(() => {
-  //         //   location.reload();
-  //         // }, 1500);
-  //       }
-  //     );
-  //   }
-  // }
+  static delete_result() {}
 }

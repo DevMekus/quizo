@@ -19,14 +19,14 @@
             </a>
         </div>
         <div class="s-link-wrap">
-            <a href="performance.php">
+            <a href="quiz-result.php">
                 <span class="fas fa-chart-line icon"></span><span class="text">User Performance</span>
             </a>
         </div>
-        <div class="s-link-wrap">
+        <!-- <div class="s-link-wrap">
             <a href="usermanager.php">
                 <span class="fas fa-users icon"></span><span class="text">Manage Users</span>
             </a>
-        </div>
+        </div> -->
     </div>
 </div>

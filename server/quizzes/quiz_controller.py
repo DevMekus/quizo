@@ -1,5 +1,6 @@
  # Quiz business logic
 from flask import request, jsonify
+from datetime import datetime
 from db import db
 from models import ResultModel, QuizModel
 # from auth.auth_controller import token_required
@@ -60,8 +61,8 @@ def quiz_results():
 
 def create_result():
     data = request.get_json()
-    new_result = ResultModel(quiz_id=data['quiz_id'], user_id=data['userid'], score=data['score'])
     
+    new_result = ResultModel(quiz_id=data['quiz_id'], user_id=data['userid'], score=data['score'])    
     db.session.add(new_result)
     db.session.commit()
     
