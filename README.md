@@ -36,7 +36,7 @@ This is a **Flask-based RESTful API** for a quiz application with user authentic
 
 - **Backend**: Flask, SQLAlchemy, Flask-JWT-Extended (for authentication)
 - **Frontend**: JavaScript (Fetch API for sending HTTP requests)
-- **Database**: SQLite (can be switched to PostgreSQL, MySQL, etc.)
+- **Database**: SQLite
 - **Authentication**: JSON Web Tokens (JWT)
 - **Environment Management**: Flask environment variables and configuration
 
@@ -48,7 +48,7 @@ The API is divided into endpoints for:
 
 - **User**: For user authentication, registration, and profile management.
 - **Admin**: Administer quizzes, questions, and users.
-- **Quiz**: Handling quiz creation, participation, and results.
+- **Quiz**: Handling quiz participation, and results.
 
 ---
 
@@ -57,15 +57,15 @@ The API is divided into endpoints for:
 ### 1. **Clone the Repository**
 
 ```bash
-git clone https://github.com/your-repo/quiz-application.git
-cd quiz-application
+git clone https://github.com/DevMekus/quizo.git
+cd quiz
 ```
 
 ### 2. **Create a Virtual Environment**
 
 ```bash
 python3 -m venv venv
-source venv/bin/activate  # For Windows: venv\Scripts\activate
+source venv/bin/activate
 ```
 
 ### 3. **Install Dependencies**
@@ -88,10 +88,7 @@ Create a `.env` file in the root directory and set the following environment var
 
 ```plaintext
 FLASK_APP=app.py
-FLASK_ENV=development
-SECRET_KEY=your_secret_key
-JWT_SECRET_KEY=your_jwt_secret_key
-DATABASE_URL=sqlite:///quiz.db  # Use your preferred database URL
+DATABASE_URL=sqlite:///quiz.db
 ```
 
 ### 6. **Run the Application**
@@ -112,7 +109,7 @@ After setup, you can start the application by running:
 python app.py
 ```
 
-To access the admin interface or use the API, you can send HTTP requests from your frontend or tools like Postman. For example, to log in as an admin or user:
+To access the API, you can send HTTP requests from your frontend or tools like Postman. For example, to log in as an admin or user:
 
 ```bash
 POST http://localhost:5000/auth/login
@@ -158,39 +155,3 @@ POST http://localhost:5000/auth/login
 | DELETE | `/admin/questions/<question_id>`     | Delete a question.       |
 
 ---
-
-## **Frontend Structure**
-
-You can integrate the API with a JavaScript frontend using `fetch` or Axios to send HTTP requests. Here’s an example of sending a request to log in:
-
-```javascript
-fetch("http://localhost:5000/auth/login", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    username: "user1",
-    password: "password123",
-  }),
-})
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data);
-    // Store the token or handle the response
-  });
-```
-
----
-
-## **License**
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-Feel free to extend and modify the application based on your project needs!
-
----
-
-This `README.md` file covers the full setup process, endpoint descriptions, and example requests for your quiz application project. You can customize it further depending on any specific changes you make to the API or frontend integration.

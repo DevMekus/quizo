@@ -165,7 +165,7 @@ export default class Application {
             const correctAnswer = document.querySelector(
               `input[name="optionCorrect${questionNumber}"]`
             );
-            
+
             if (correctAnswer) {
               correctAnswer.value;
             }
@@ -177,6 +177,10 @@ export default class Application {
 
         alert(`You got ${correctAnswers} out of ${totalQuestions} correct.`);
       });
+    }
+  }
+  postQuizResult(postdata = null) {
+    if (postdata != null) {
     }
   }
 }
