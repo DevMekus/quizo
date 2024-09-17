@@ -1,11 +1,8 @@
 #Authentication Controller
 from flask import request, jsonify
-from models import UserModel, AdminModel, LogModel
+from models import UserModel, AdminModel
 from db import db
 from werkzeug.security import generate_password_hash, check_password_hash
-import jwt
-import datetime
-from functools import wraps
 from flask import current_app as app
 
 

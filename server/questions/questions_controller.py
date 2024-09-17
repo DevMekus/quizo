@@ -20,6 +20,10 @@ def create_question():
     data = request.get_json()
     
     #check if question exist by title
+    question = QuestionModel.query.filter_by(question=data['question']).first()
+    if question:
+        return jsonify({'message':'Question already exist.','status':'error'}), 409
+    
     new_question = QuestionModel(question=data['question'],
                                  optionA=data['optionA'],
                                  optionB=data['optionB'],
