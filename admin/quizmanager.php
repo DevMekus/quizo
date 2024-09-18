@@ -20,10 +20,7 @@ include("header.php");
             <section class="manage-quiz mt-10 container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="page-title-con">
-                            <h4 class="page-title">Manage Quiz</h4>
-                            <p class="page-description">Listing all available quizzes and filter them by title or date</p>
-                        </div>
+
                         <div class="mt-10 activities-con">
                             <div class="quiz_table scrollable"></div>
                         </div>

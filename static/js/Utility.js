@@ -38,7 +38,7 @@ export default class Utility {
         feedback[i].innerHTML = `
 
          <div class="alert alert-${
-           response["status"] ? "success" : "danger"
+           response["status"] == "success" ? "success" : "danger"
          } alert-dismissible fade show" role="alert">
               <p class="">${response["message"]}.</p>
               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>

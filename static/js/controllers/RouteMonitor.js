@@ -15,6 +15,22 @@ export default class RouteCrawler {
       Base.pageUrl.includes("/admin/")
     ) {
       fetchData(`${Base.apiUrl}quiz/all`).then((data) => {
+        if (data.length == 0 && Base.pageUrl.includes("questionmanager.php")) {
+          const addQBtn = document.querySelector(".addQBtn");
+          if (addQBtn) {
+            addQBtn.disabled = true;
+
+            addQBtn.addEventListener("click", (e) => {
+              e.preventDefault();
+              const data = {
+                status: "error",
+                message: "You cannot add a question. Create a quiz first.",
+              };
+
+              utils.feedback(data);
+            });
+          }
+        }
         this.countQuiz(data);
         this.display_quiz_table(data);
         this.display_quiz_card(data);
@@ -54,6 +70,10 @@ export default class RouteCrawler {
 
       if (htmlUi && quizzes.length > 0) {
         display += `
+            <div class="page-title-con">
+                <h4 class="page-title">Manage Quiz</h4>
+                <p class="page-description">Listing all available quizzes and filter them by title or date</p>
+            </div>
             <table class="table table-hover">
                 <thead>
                     <tr class="tableHead">
@@ -88,8 +108,8 @@ export default class RouteCrawler {
         `;
       } else {
         display += `
-          <h5>No Quiz Available</h5>
-          <p>We do not have quiz available for students.</p>
+          <h3 class="color-red">Quiz Not Found!</h3>
+          <p class="page-description">We do not have quiz available for students.</p>
         `;
       }
       htmlUi.innerHTML = display;
@@ -155,6 +175,10 @@ export default class RouteCrawler {
 
       if (htmlUi && questions.length > 0) {
         display += `
+         <div class="page-title-con">
+              <h4 class="page-title">Manage Quiz Questions</h4>
+              <p class="page-description">Listing all available quizzes questions</p>
+          </div>
             <table class="table table-hover">
                 <thead>
                     <tr class="tableHead">
@@ -172,10 +196,7 @@ export default class RouteCrawler {
                   <th scope="row">${question.id}</th>
                   <td>${question.quiz_id}</td>
                   <td>${question.question}</td>
-                  <td>
-                      <button class="btn btn-primary btn-sm click-effect" data-bs-toggle="modal" data-bs-target="#editQuestion" data-id=${question.id}>
-                          <i class="fas fa-edit"></i>
-                      </button>
+                  <td>                     
                       <button class="btn btn-danger btn-sm click-effect qDel" data-id=${question.id}>
                           <i class="fas fa-times"></i>
                       </button>
@@ -189,8 +210,8 @@ export default class RouteCrawler {
       `;
       } else {
         display += `
-          <h5>No Questions Available</h5>
-          <p>We do not have questions available for students.</p>
+          <h3 class="color-red">Quiz Question Not Found!</h3>
+          <p class="page-description">You have no quiz questions set at the moment.</p>
         `;
       }
       htmlUi.innerHTML = display;
@@ -312,6 +333,10 @@ export default class RouteCrawler {
       if (htmlUi && results.length > 0) {
         const page = htmlUi.getAttribute("data-page");
         display += `
+         <div class="page-title-con">
+            <h4 class="page-title">Quiz Results</h4>
+            <p class="page-description">Listing all available quiz results</p>
+        </div>
             <table class="table table-hover">
                 <thead>
                     <tr class="tableHead">
@@ -367,12 +392,61 @@ export default class RouteCrawler {
       `;
       } else {
         display += `
-          <h5>No Results Available</h5>
-          <p>We do not have result available for students.</p>
+          <h3 class="color-red">Results not available!</h3>
+          <p class="page-description">You have no quiz results at the moment.</p>
         `;
       }
       htmlUi.innerHTML = display;
       Application.delete_result();
+    }
+  }
+
+  async display_users_table() {
+    if (Base.pageUrl.includes("/admin/users.php")) {
+      let display = ``;
+      let htmlUi = document.querySelector(".u_table");
+      const users = await Base.getUsers();
+
+      if (htmlUi && users != null && users.length != 0) {
+        display += `
+            <table class="table table-hover">
+                <thead>
+                    <tr class="tableHead">
+                        <th scope="col">#</th>;      
+                        <th scope="col">Username</th>
+                        <th scope="col">Email Address</th>
+                        <th scope="col"></th>                         
+                    </tr>
+                </thead>
+                <tbody>
+        `;
+        users.forEach((user) => {
+          display += `
+          <tr>
+              <th scope="row" class="text-center">${user.id}</th>
+              <td class="text-center">${user.username}</td>
+              <td class="text-center">${user.email}</td>  
+              <td class="text-center">
+                <button class="btn btn-sm btn-danger delUser" data-id=${user.id}>
+                  <i class="fas fa-trash"></i>
+                </button>
+              </td>              
+          </tr>
+      `;
+        });
+
+        display += `
+      </tbody>
+      </table>
+    `;
+        Application.delete_user();
+      } else {
+        display += `
+          <h3 class="color-red">User Account Not Found!</h3>
+          <p class="page-description">There are no registered user at the moment</p>
+        `;
+      }
+      htmlUi.innerHTML = display;
     }
   }
 }

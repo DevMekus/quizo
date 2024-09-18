@@ -29,6 +29,11 @@
             </a>
         </div>
         <div class="s-link-wrap">
+            <a href="users.php">
+                <span class="fas fa-users icon"></span><span class="text">User Manager</span>
+            </a>
+        </div>
+        <div class="s-link-wrap">
             <button class="button-sm button button-danger radius-5 btn-active no-decoration logout">
                 <span class="material-symbols-outlined icon">
                     power_settings_new

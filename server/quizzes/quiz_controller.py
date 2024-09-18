@@ -2,7 +2,7 @@
 from flask import request, jsonify
 from datetime import datetime
 from db import db
-from models import ResultModel, QuizModel
+from models import ResultModel, QuizModel, QuestionModel
 
 
 def create_quiz():
@@ -48,6 +48,19 @@ def delete_quiz(quiz_id):
         # Delete the quiz from the database
         db.session.delete(quiz)
         db.session.commit()
+        
+        # Delete all the result in database with quiz_id
+        results = ResultModel.query.filter_by(quiz_id=quiz_id).all()
+        if results:
+            db.session.delete(results)
+            db.session.commit()
+        
+        #delete questions with the quiz ID
+        questions = QuestionModel.query.filter_by(quiz_id=quiz_id).all()
+        if results:
+            db.session.delete(questions)
+            db.session.commit()
+               
         return jsonify({'message': 'Quiz deleted successfully', 'status': 'success'}), 200
     except Exception as e:
         db.session.rollback()

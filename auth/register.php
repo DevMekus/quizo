@@ -23,12 +23,12 @@ include("header.php");
                     <label for="password">Password</label>
                     <input type="password" placeholder="" class="form-ctr" name="password" id="password" require />
                 </div>
-                <input type="hidden" placeholder="" class="form-ctr" name="role" value="user" id="password" require />
-                
+                <input type="hidden" placeholder="" class="form-ctr" name="role" value="user" id="role" require />
+
                 <div class="auth-bottom">
                     <div>
                         <small>Already have an account?</small><br />
-                        <a href="login.php">Create account</a>
+                        <a href="login.php">Login account</a>
                     </div>
                     <button type="submit" name="loginUser" class="button button-primary semi-pill">Create account</button>
                 </div>

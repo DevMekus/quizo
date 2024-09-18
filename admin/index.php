@@ -46,10 +46,11 @@ include("header.php");
             <section class="mt-10 recent-activities container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="page-title-con">
+
+                        <!-- <div class="page-title-con">
                             <h4 class="page-title">Recent activities</h4>
                             <p class="page-description">Manage site recent activities</p>
-                        </div>
+                        </div> -->
                         <!-- <div class="mt-10 activities-con">
                             <table class="table table-hover">
                                 <thead>

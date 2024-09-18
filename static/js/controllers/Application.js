@@ -225,6 +225,27 @@ export default class Application {
 
   static delete_result() {}
 
+  static delete_user() {
+    const delUser = document.querySelectorAll(".delUser");
+
+    if (delUser) {
+      for (let i = 0; i < delUser.length; i++) {
+        delUser[i].addEventListener("click", () => {
+          if (confirm("Do you wish to continue?")) {
+            const id = delUser[i].getAttribute("data-id");
+            deleteData(`${Base.apiUrl}users/user/${id}`).then((response) => {
+              utils.feedback(response);
+              console.log(response);
+              setTimeout(() => {
+                location.reload();
+              }, 1500);
+            });
+          }
+        });
+      }
+    }
+  }
+
   openSideBar() {
     const toggleBtn = document.querySelector(".toggleSide");
     const sideBar = document.querySelector(".sidebar");
@@ -246,6 +267,7 @@ export default class Application {
       });
     }
   }
+  
   logout() {
     const logout = document.querySelector(".logout");
     if (logout) {

@@ -13,16 +13,14 @@ include("header.php");
                 <p class="page-description"> Functionalities to add, update, and delete questions within quizzes</p>
             </div>
             <section class="new-quiz col-sm-3">
-                <a href="addQuestion.php" class="button button-primary radius-5">Add Questions</a>
+                <a href="addQuestion.php" class="button button-primary radius-5 addQBtn">Add Questions</a>
                 <p class="small-p">Add new questions to a selected quiz.</p>
             </section>
+            <div class="feedback mt-10"></div>
             <section class="manage-quiz mt-10 container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="page-title-con">
-                            <h4 class="page-title">Manage Quiz</h4>
-                            <p class="page-description">Listing all available quizzes and filter them by title or date</p>
-                        </div>
+
                         <div class="mt-10 activities-con quiz_table scrollable">
                             <div class="q_table"></div>
                         </div>

@@ -8,18 +8,17 @@ include("header.php");
         <?php include("navbar.php"); ?>
         <section class="content-centered">
             <div class="page-title-con">
-                <h2 class="page-title">Quiz Results Overview
+                <h2 class="page-title">User Management
                 </h2>
-                <p class="page-description">View user participation in quizzes and their scores.
+                <p class="page-description">View all the users registered in the platform
                 </p>
             </div>
+            <div class="feedback mt-10"></div>
             <section class="manage-quiz mt-10 container">
                 <div class="row">
                     <div class="col-sm-12">
-
                         <div class="mt-10 activities-con">
-                            <div class="r_table scrollable" data-page="admin"></div>
-
+                            <div class="u_table scrollable"></div>
                         </div>
                     </div>
                 </div>
