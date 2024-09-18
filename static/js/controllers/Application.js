@@ -10,7 +10,7 @@ export default class Application {
         e.preventDefault();
 
         postData(
-          `${Base.apiUrl}auth/login`,
+          `${Base.apiUrl}auth/register`,
           JSON.stringify(utils.formData_to_Object(new FormData(register)))
         ).then((response) => {
           console.log(response);
