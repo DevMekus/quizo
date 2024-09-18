@@ -25,7 +25,7 @@ def register():
     db.session.add(new_user)
     db.session.commit()
     
-    return jsonify({'message':'User registered successfully','status':'success'}),201
+    return jsonify({'message':'User registered successfully. Login now','status':'success'}),201
 
     
 def login():

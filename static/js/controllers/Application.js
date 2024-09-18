@@ -2,6 +2,23 @@ import Base from "./Base.js";
 import Utility from "../Utility.js";
 const utils = new Utility();
 export default class Application {
+  register() {
+    const register = document.querySelector(".register");
+
+    if (register) {
+      register.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        postData(
+          `${Base.apiUrl}auth/login`,
+          JSON.stringify(utils.formData_to_Object(new FormData(register)))
+        ).then((response) => {
+          console.log(response);
+          utils.feedback(response);
+        });
+      });
+    }
+  }
   login() {
     const loginForm = document.querySelector(".login_form");
 
@@ -36,6 +53,7 @@ export default class Application {
         `${Base.appUrl}configs/usersession.php?
             session=${userid}&role=${role}`
       ).then((session) => {
+        utils.feedback(session);
         if (session["status"] == "success") {
           this.setToken(response);
           role == "user"
