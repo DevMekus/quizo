@@ -88,7 +88,7 @@ Create a `.env` file in the root directory and set the following environment var
 
 ```plaintext
 FLASK_APP=app.py
-DATABASE_URL=sqlite:///quiz.db
+DATABASE_URL=sqlite:///quiz_app.db
 ```
 
 ### 6. **Run the Application**
@@ -128,30 +128,19 @@ POST http://localhost:5000/auth/login
 
 ### **User Endpoints**
 
-| Method | Endpoint              | Description                        |
-| ------ | --------------------- | ---------------------------------- |
-| GET    | `/users/me`           | Get the current user's profile.    |
-| PUT    | `/users/me`           | Update user profile information.   |
-| GET    | `/users/quiz-history` | Get the quiz history for the user. |
+| Method | Endpoint        | Description                      |
+| ------ | --------------- | -------------------------------- |
+| GET    | `/users/user`   | Get the current user's profile.  |
+| PATCH  | `/users/update` | Update user profile information. |
+| GET    | `/users/all`    | Get all the users.               |
 
 ### **Quiz Endpoints**
 
-| Method | Endpoint                     | Description                                 |
-| ------ | ---------------------------- | ------------------------------------------- |
-| GET    | `/quizzes`                   | Retrieve all available quizzes for users.   |
-| GET    | `/quizzes/<quiz_id>`         | Retrieve a specific quiz.                   |
-| POST   | `/quizzes/<quiz_id>/submit`  | Submit answers for a quiz.                  |
-| GET    | `/quizzes/<quiz_id>/results` | Retrieve quiz results for the current user. |
-
-### **Admin Endpoints**
-
-| Method | Endpoint                             | Description              |
-| ------ | ------------------------------------ | ------------------------ |
-| POST   | `/admin/quizzes`                     | Create a new quiz.       |
-| PUT    | `/admin/quizzes/<quiz_id>`           | Update a quiz.           |
-| DELETE | `/admin/quizzes/<quiz_id>`           | Delete a quiz.           |
-| POST   | `/admin/quizzes/<quiz_id>/questions` | Add questions to a quiz. |
-| PUT    | `/admin/questions/<question_id>`     | Update a question.       |
-| DELETE | `/admin/questions/<question_id>`     | Delete a question.       |
+| Method | Endpoint          | Description                               |
+| ------ | ----------------- | ----------------------------------------- |
+| GET    | `/quiz/all`       | Retrieve all available quizzes for users. |
+| GET    | `/quiz/<quiz_id>` | Retrieve a specific quiz.                 |
+| POST   | `/quiz/quiz`      | Create a new Quiz                         |
+| DELETE | `/quiz/<quiz_id>` | Delete a quiz.                            |
 
 ---
