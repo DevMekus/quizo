@@ -1,0 +1,26 @@
+.hero-section{
+    width: 100%;
+    position: relative;
+    height: 80vh;
+    background-color: #EDD9B8;
+}
+
+.hero-text{
+    width: 100%;
+    position: relative;
+    height: 80vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.hero-text h1{
+    line-height: 40px;
+    font-size: 40px;
+}
+
+.hero-text p{
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: justify;
+}

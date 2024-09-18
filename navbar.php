@@ -1,15 +1,11 @@
-<nav class="navbar">
-    <div class="inner">
+<nav class="nav-bar">
+    <div class="nav-inner">
         <div>
-            <h2><span class="color-white">Qui</span><span class="color-black">zo</span></h2>
+            <h1 class="logo-text"><span class="q">Qui</span><span class="z">zo</span></h1>
         </div>
-        <div class="flex gap-10 authBtn">
-            <a href="auth/login.php" class="button button-success radius-5 semi-pill">
-                Login
-            </a>
-            <a href="auth/register.php" class="button button-success radius-5 semi-pill">
-                Register
-            </a>
+        <div class="flex gap-10 nav-btn">
+            <a href="auth/login.php" class="button button-primary radius-5">Login</a>
+            <a href="auth/register.php" class="button button-success radius-5">Register</a>
         </div>
     </div>
 </nav>

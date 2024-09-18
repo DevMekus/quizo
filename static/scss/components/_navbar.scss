@@ -1,6 +1,27 @@
-.navbar{
+.nav-bar{
     width: 100%;
     position: relative;
-    height: 70px;
-    background-color: $primaryColor;
+    background-color: black;
+}
+
+.nav-bar .nav-inner{
+    width: 90%;
+    margin: auto;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo-text{
+    letter-spacing: 1px;
+}
+
+.logo-text .q{
+    color: $primaryColor;
+}
+
+.logo-text .z{
+    color: #fff;
 }
