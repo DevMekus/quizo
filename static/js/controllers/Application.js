@@ -13,7 +13,6 @@ export default class Application {
           `${Base.apiUrl}auth/register`,
           JSON.stringify(utils.formData_to_Object(new FormData(register)))
         ).then((response) => {
-          console.log(response);
           utils.feedback(response);
         });
       });
@@ -30,7 +29,7 @@ export default class Application {
           `${Base.apiUrl}auth/login`,
           JSON.stringify(utils.formData_to_Object(new FormData(loginForm)))
         ).then((response) => {
-          console.log(response);
+          utils.feedback(response);
           response["status"] == "success" ? this.setSession(response) : "";
         });
       });
@@ -267,7 +266,7 @@ export default class Application {
       });
     }
   }
-  
+
   logout() {
     const logout = document.querySelector(".logout");
     if (logout) {

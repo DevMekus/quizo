@@ -140,8 +140,10 @@ export default class RouteCrawler {
         });
       } else {
         display += `
-          <h5>No Quiz Available</h5>
-          <p>We do not have quiz available for students.</p>
+          <div>
+            <h3 class="color-red">Quiz not available!</h3>
+            <p class="page-description">You have no quiz available at the moment.</p>
+          </div>
         `;
       }
       htmlUi.innerHTML = display;
