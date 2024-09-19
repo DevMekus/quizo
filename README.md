@@ -3,6 +3,10 @@
 This is a **Flask-based RESTful API** for a quiz application with user authentication and admin management. The API allows users to participate in quizzes, view results, and manage their profile, while admins can create and manage quizzes and questions.
 
 ---
+**Authors**:  
+
+- **Nnaemeka Nnaji**  
+- **Clarkson Awomu**  
 
 ## **Table of Contents**
 
