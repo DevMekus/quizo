@@ -8,7 +8,7 @@ include("header.php");
         <?php include("navbar.php"); ?>
         <section class="content-centered">
             <div class="page-title-con">
-                <h2 class="page-title">Welcome back</h2>
+                <h2 class="page-title">Welcome back Admin,</h2>
                 <h4 class="color-primary username"></h4>
                 <p class="page-description">Attend to the quiz overviews</p>
             </div>
