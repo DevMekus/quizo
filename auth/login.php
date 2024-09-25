@@ -38,7 +38,7 @@ include("header.php");
                     <input type="password" placeholder="" class="form-ctr" name="password" id="password" require />
                 </div>
                 <div class="flex flex-start f-width align-center mt-10">
-                    <a href="recovery.php" class="link auth-link color-primary bold no-decoration">Forgot password?</a>
+                    <a href="#" class="link auth-link color-primary bold no-decoration">Forgot password?</a>
                 </div>
                 <div class="auth-bottom">
                     <div>

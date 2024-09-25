@@ -1,3 +1,8 @@
+<footer class='container'>
+    <p class='small-paa'>&copy; 2024 Quizo. All rights reserved.</p>
+    <p class='small-ps'>For support, contact us at <a href="mailto:support@10over10cars.com">support@quizo.com</a></p>
+
+</footer>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>

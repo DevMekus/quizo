@@ -18,7 +18,7 @@
     //border: 1px solid rgb(171, 171, 171);
     padding: 10px 20px;
     border-radius: 10px;
-    background-color: $primaryColor;
+    background-color: $greyColor;
     width: 100%;   
     position: relative;
 }
@@ -26,15 +26,13 @@
 .auth-title-con h1{
     font-size: 25px;
     font-weight: 900;
-    color: #fff;
+    // color: #fff;
 }
 
 .auth-title-con p{
     font-size: 18px;
     font-weight: 100;
-    margin-top: -10px;
-    color: #fff;
-    font-family: 'Times New Roman', Times, serif;
+    margin-top: -10px;   
 }
 
 .auth-body-con{
@@ -42,6 +40,7 @@
     padding: 20px;
     border-radius: 10px;
     margin-top: 10px;
+    background-color: $greyColor;
      //box-shadow: rgba(223, 223, 224, 0.292) 0px 7px 29px 0px;
 }
 
