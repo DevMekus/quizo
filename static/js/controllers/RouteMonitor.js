@@ -91,10 +91,7 @@ export default class RouteCrawler {
                   <th scope="row">${quiz.id}</th>
                   <td>${quiz.title}</td>
                   <td>${quiz.description}</td>
-                  <td>
-                      <button class="btn btn-primary btn-sm click-effect" data-bs-toggle="modal" data-bs-target="#editQuestion" data-id=${quiz.id}>
-                          <i class="fas fa-edit"></i>
-                      </button>
+                  <td>                   
                       <button class="btn btn-danger btn-sm click-effect quizDel" data-id=${quiz.id}>
                           <i class="fas fa-times"></i>
                       </button>

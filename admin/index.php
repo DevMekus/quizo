@@ -32,54 +32,48 @@ include("header.php");
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="col-sm-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title"><span class="fas fa-clipboard-list icon mr-10"></span>Questions</h4>
-                                <p class="small-p">Total number of questions</p>
-                                <h2>0</h2>
-                            </div>
-                        </div>
-                    </div> -->
+
                 </div>
             </section>
             <section class="mt-10 recent-activities container">
                 <div class="row">
                     <div class="col-sm-12">
-
-                        <!-- <div class="page-title-con">
-                            <h4 class="page-title">Recent activities</h4>
-                            <p class="page-description">Manage site recent activities</p>
-                        </div> -->
-                        <!-- <div class="mt-10 activities-con">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr class="tableHead">
-                                        <th scope="col">#</th>
-                                        <th scope="col">User</th>
-                                        <th scope="col">Type</th>
-                                        <th scope="col">Messages </th>
-                                        <th scope="col">Date</th>
-                                        <th scope="col"></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="pointer trow">
-                                        <th scope="row">362</th>
-                                        <td>John Doe</td>
-                                        <td>Registration</td>
-                                        <td>Joined the platform recently</td>
-                                        <th scope="row">2hours ago</th>
-                                        <td>
-                                            <button class="btn btn-danger btn-sm click-effect">
-                                                <i class="fas fa-times"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                        </div> -->
+                        <div class="page-padding bg-grey">
+                            <h3>Overview Page</h3>
+                            <p>The singular purpose of the section is to display basic info:
+                            </p>
+                            <ol>
+                                <li>The Number of quiz available for users</li>
+                                <li>The number of registered account</li>
+                            </ol>
+                            <div class="mt-10">
+                                <h4>Endpoints</h4>
+                                <p>Use your Javascript to make a GET request to the following endpoints:</p>
+                                <div class="mt-10 scrollable">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                        <tbody>
+                                            <tr>
+                                                <th>GET</th>
+                                                <td>/quiz/all</td>
+                                                <td>Gets all the quiz available to the admin</td>
+                                            </tr>
+                                            <tr>
+                                                <th>GET</th>
+                                                <td>/users/all</td>
+                                                <td>Gets all the user registered to the platform</td>
+                                            </tr>
+                                        </tbody>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

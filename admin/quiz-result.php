@@ -8,7 +8,7 @@ include("header.php");
         <?php include("navbar.php"); ?>
         <section class="content-centered">
             <div class="page-title-con">
-                <h2 class="page-title">Quiz Results Overview
+                <h2 class="page-title">Quiz Results
                 </h2>
                 <p class="page-description">View user participation in quizzes and their scores.
                 </p>
@@ -16,10 +16,46 @@ include("header.php");
             <section class="manage-quiz mt-10 container">
                 <div class="row">
                     <div class="col-sm-12">
-
                         <div class="mt-10 activities-con">
                             <div class="r_table scrollable" data-page="admin"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="mt-10 container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="page-padding bg-grey">
+                            <div>
+                                <h4>Endpoints</h4>
+                                <p>Use your Javascript to make a request to the following endpoint:</p>
+                                <div class="mt-10 scrollable">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                        <tbody>
+                                            <tr>
+                                                <th>GET</th>
+                                                <td>/quiz/results</td>
+                                                <td>Gets all the quiz questions in the platform</td>
+                                            </tr>
 
+                                            <!-- <tr>
+                                                <th>DELETE</th>
+                                                <td>/questions/question_id
+                                                </td>
+                                                <td>Delete a quiz question using the question id</td>
+                                            </tr> -->
+                                        </tbody>
+                                        </thead>
+                                    </table>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>

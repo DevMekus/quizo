@@ -23,6 +23,44 @@ include("header.php");
                     </div>
                 </div>
             </section>
+            <section class="mt-10 container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="page-padding bg-grey">
+                            <div>
+                                <h4>Endpoints</h4>
+                                <p>Use your Javascript to make a request to the following endpoint:</p>
+                                <div class="mt-10 scrollable">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                        <tbody>
+                                            <tr>
+                                                <th>GET</th>
+                                                <td>/users/all</td>
+                                                <td>Gets all the registered users/accounts in the platform</td>
+                                            </tr>
+
+                                            <tr>
+                                                <th>DELETE</th>
+                                                <td>/users/user_id
+                                                </td>
+                                                <td>Deletes a user using the user id</td>
+                                            </tr>
+                                        </tbody>
+                                        </thead>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <?php include("footercontent.php") ?>
         </section>
     </div>

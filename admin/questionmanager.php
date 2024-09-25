@@ -20,9 +20,57 @@ include("header.php");
             <section class="manage-quiz mt-10 container">
                 <div class="row">
                     <div class="col-sm-12">
-
                         <div class="mt-10 activities-con quiz_table scrollable">
                             <div class="q_table"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="mt-10 container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="page-padding bg-grey">
+                            <div>
+                                <h4>Endpoints</h4>
+                                <p>Use your Javascript to make a request to the following three endpoints:</p>
+                                <div class="mt-10 scrollable">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                        <tbody>
+                                            <tr>
+                                                <th>GET</th>
+                                                <td>/questions/all</td>
+                                                <td>Gets all the quiz questions in the platform</td>
+                                            </tr>
+                                            <tr>
+                                                <th>GET</th>
+                                                <td>/questions/quiz_id</td>
+                                                <td>Gets all the quiz questions related to a particular quiz by quiz_id</td>
+                                            </tr>
+                                            <tr>
+                                                <th>DELETE</th>
+                                                <td>/questions/question_id
+                                                </td>
+                                                <td>Delete a quiz question using the question id</td>
+                                            </tr>
+                                        </tbody>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="mt-10">
+                                    <h4>New Quiz Form</h4>
+                                    <p>For the new quiz POST request, the Form Names expected are:</p>
+                                    <ul>
+                                        <li><span class="bold">title</span> - Title of the quiz</li>
+                                        <li><span class="bold">description</span> - description of the quiz</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
