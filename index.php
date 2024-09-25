@@ -1,8 +1,12 @@
+
 <?php
+#instantiate and include required dependencies
+
 $title = "Flask Quiz API";
 include("header.php");
 include("navbar.php");
 ?>
+<!-- Header start -->
 <header class="hero-section">
     <div class="container">
         <div class="row">
@@ -143,6 +147,6 @@ include("navbar.php");
 
 </main>
 
-
+<!-- Header end -->
 
 <?php include("footer.php") ?>

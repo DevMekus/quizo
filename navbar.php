@@ -1,3 +1,4 @@
+<!-- Nav bar start -->
 <nav class="nav-bar">
     <div class="nav-inner">
         <div>
@@ -9,3 +10,4 @@
         </div>
     </div>
 </nav>
+<!-- Navbar end -->
