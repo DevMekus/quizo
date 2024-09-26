@@ -3,7 +3,7 @@ require_once('configs/config.php');
 ?>
 <!DOCTYPE html>
 <html>
-
+<!--Head start -->
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -12,16 +12,16 @@ require_once('configs/config.php');
     <!-- Latest compiled and minified CSS -->
     <link rel="shortcut icon" href="<?php echo $site;  ?> assets/images/esut.jpeg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
+    <!-- Load Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-
+    <!-- Load CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://use.fontawesome.com/4138dd15b3.js"></script>
     <link rel='stylesheet' type='text/css' media='screen' href='static/scss/main.css' />
 </head>
-
+<!-- Head area end -->
 <body>
