@@ -7,6 +7,7 @@ include("header.php");
         <div class="auth-title-con">
             <h1>Create an account</h1>
             <p>Create an account to participate.</p>
+            <a href="../index.php">Go home</a>
         </div>
         <div class="feedback mt-10"></div>
         <div class="auth-body-con">

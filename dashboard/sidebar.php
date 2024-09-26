@@ -30,7 +30,7 @@
         </div> -->
         <div class="s-link-wrap">
             <button class="button-sm button button-danger radius-5 btn-active no-decoration logout">
-                <span class="material-symbols-outlined icon">
+                <span class="material-symbols-outlined icon mr-10">
                     power_settings_new
                 </span> Logout
             </button>

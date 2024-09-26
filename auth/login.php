@@ -25,6 +25,7 @@ include("header.php");
         <div class="auth-title-con  mt-10">
             <h1>Login to account</h1>
             <p>Enter your credentials and login</p>
+            <a href="../index.php">Go home</a>
         </div>
 
         <div class="auth-body-con">
@@ -38,7 +39,7 @@ include("header.php");
                     <input type="password" placeholder="" class="form-ctr" name="password" id="password" require />
                 </div>
                 <div class="flex flex-start f-width align-center mt-10">
-                    <a href="recovery.php" class="link auth-link color-primary bold no-decoration">Forgot password?</a>
+                    <a href="#" class="link auth-link color-primary bold no-decoration">Forgot password?</a>
                 </div>
                 <div class="auth-bottom">
                     <div>

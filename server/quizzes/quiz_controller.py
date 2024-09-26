@@ -5,6 +5,7 @@ from db import db
 from models import ResultModel, QuizModel, QuestionModel
 
 
+
 def create_quiz():
     data = request.get_json()
     title = data.get('title')
@@ -49,22 +50,24 @@ def delete_quiz(quiz_id):
         db.session.delete(quiz)
         db.session.commit()
         
-        # Delete all the result in database with quiz_id
+        # Delete all results in the database with quiz_id
         results = ResultModel.query.filter_by(quiz_id=quiz_id).all()
-        if results:
-            db.session.delete(results)
-            db.session.commit()
+        for result in results:
+            db.session.delete(result)
         
-        #delete questions with the quiz ID
+        # Delete all questions with the quiz_id
         questions = QuestionModel.query.filter_by(quiz_id=quiz_id).all()
-        if results:
-            db.session.delete(questions)
-            db.session.commit()
-               
-        return jsonify({'message': 'Quiz deleted successfully', 'status': 'success'}), 200
+        for question in questions:
+            db.session.delete(question)
+        
+        # Commit changes to the database
+        db.session.commit()
+
+        return jsonify({'message': 'Quiz and associated data deleted successfully', 'status': 'success'}), 200
     except Exception as e:
         db.session.rollback()
         return jsonify({'message': 'Failed to delete quiz', 'status': 'error', 'error': str(e)}), 500
+
 
 #Handling the Controllers of the quiz Results
 def quiz_results():

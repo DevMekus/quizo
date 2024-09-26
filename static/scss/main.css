@@ -8,7 +8,7 @@
 }
 
 .color-grey {
-  color: rgba(170, 168, 168, 0.579);
+  color: rgb(249, 249, 249);
 }
 
 .color-red {
@@ -20,7 +20,7 @@
 }
 
 .bg-grey {
-  background-color: rgba(170, 168, 168, 0.579);
+  background-color: rgb(249, 249, 249);
 }
 
 .bg-brandColor {
@@ -117,7 +117,7 @@
 }
 
 p {
-  font-family: "Roboto", sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 20px;
   font-weight: 300;
   line-height: 1.95em;
@@ -191,12 +191,12 @@ h6 {
 }
 
 .form-input::-moz-placeholder {
-  color: rgba(170, 168, 168, 0.579);
+  color: rgb(249, 249, 249);
   opacity: 1;
 }
 
 .form-input::placeholder {
-  color: rgba(170, 168, 168, 0.579);
+  color: rgb(249, 249, 249);
   opacity: 1;
 }
 
@@ -275,7 +275,7 @@ h6 {
 }
 
 .button:active {
-  background-color: rgba(170, 168, 168, 0.579);
+  background-color: rgb(249, 249, 249);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   transform: translateY(2px);
 }
@@ -306,7 +306,7 @@ h6 {
 .auth-title-con {
   padding: 10px 20px;
   border-radius: 10px;
-  background-color: #2955BB;
+  background-color: rgb(249, 249, 249);
   width: 100%;
   position: relative;
 }
@@ -314,21 +314,19 @@ h6 {
 .auth-title-con h1 {
   font-size: 25px;
   font-weight: 900;
-  color: #fff;
 }
 
 .auth-title-con p {
   font-size: 18px;
   font-weight: 100;
   margin-top: -10px;
-  color: #fff;
-  font-family: "Times New Roman", Times, serif;
 }
 
 .auth-body-con {
   padding: 20px;
   border-radius: 10px;
   margin-top: 10px;
+  background-color: rgb(249, 249, 249);
 }
 
 .auth-bottom {
@@ -343,7 +341,7 @@ h6 {
 .nav-bar {
   width: 100%;
   position: relative;
-  background-color: black;
+  background-color: #EDD9B8;
 }
 
 .nav-bar .nav-inner {
@@ -354,6 +352,7 @@ h6 {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  border-bottom: 1px solid #15181F;
 }
 
 .logo-text {
@@ -365,6 +364,30 @@ h6 {
 }
 
 .logo-text .z {
+  color: #fff;
+}
+
+.nav-bar .nav-inner .button-primary {
+  background-color: #2955BB;
+  opacity: 1;
+  color: #fff;
+}
+
+.nav-bar .nav-inner .button-success {
+  background-color: rgb(6, 112, 6);
+  opacity: 1;
+  color: #fff;
+}
+
+.nav-bar .nav-inner .button-success:hover {
+  background-color: rgb(6, 112, 6);
+  opacity: 1;
+  color: #fff;
+}
+
+.nav-bar .nav-inner .button-primary:hover {
+  background-color: #2955BB;
+  opacity: 1;
   color: #fff;
 }
 
@@ -558,8 +581,8 @@ h6 {
 }
 
 .quiz-wrap {
-  width: 250px;
-  height: 260px;
+  width: 260px;
+  height: 280px;
   position: relative;
   padding: 10px;
   border: 1px solid grey;
@@ -587,6 +610,15 @@ h6 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.quiz-wrap .bottom button {
+  width: 90%;
+}
+
+.quiz-wrap .bottom button:hover {
+  background-color: rgb(6, 112, 6);
+  color: #fff;
 }
 
 .quiz-question-wrapper {
@@ -624,6 +656,13 @@ h6 {
 .score-flex .score-board {
   width: 250px;
   position: relative;
+}
+
+.page-padding {
+  padding: 30px;
+  width: 100%;
+  position: relative;
+  min-height: 50vh;
 }
 
 @media only screen and (max-width: 762px) {

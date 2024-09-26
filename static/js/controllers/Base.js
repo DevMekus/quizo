@@ -26,5 +26,13 @@ export default class Base {
     return quiz;
   }
 
-  
+  static async getQuizQuestion() {
+    let question = null;
+    await fetchData(`${Base.apiUrl}questions/all`).then((data) => {
+      question = data;
+      return data;
+    });
+
+    return question;
+  }
 }

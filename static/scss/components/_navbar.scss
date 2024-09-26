@@ -1,7 +1,7 @@
 .nav-bar{
     width: 100%;
     position: relative;
-    background-color: black;
+    background-color: #EDD9B8;
 }
 
 .nav-bar .nav-inner{
@@ -12,6 +12,7 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    border-bottom: 1px solid $blackColor;
 }
 
 .logo-text{
@@ -23,5 +24,28 @@
 }
 
 .logo-text .z{
+    color: #fff;
+}
+.nav-bar .nav-inner .button-primary{
+    background-color: $primaryColor;
+    opacity: 1;
+    color: #fff;
+}
+
+.nav-bar .nav-inner .button-success{
+    background-color: $greenColor;
+    opacity: 1;
+    color: #fff;
+}
+
+.nav-bar .nav-inner .button-success:hover{
+    background-color: $greenColor;
+    opacity: 1;
+    color: #fff;
+}
+
+.nav-bar .nav-inner .button-primary:hover{
+    background-color: $primaryColor;
+    opacity: 1;
     color: #fff;
 }

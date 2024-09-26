@@ -37,7 +37,7 @@ class QuestionModel(db.Model):
     optionA = db.Column(db.String(100), nullable=False)
     optionB = db.Column(db.String(100), nullable=False)
     optionC = db.Column(db.String(100), nullable=False)
-    optionCorrect = db.Column(db.String(2), nullable=False)
+    optionCorrect = db.Column(db.String(100), nullable=False)
     quiz_id = db.Column(db.String(11),nullable=False)
     # quiz_id = db.Column(db.Integer, db.ForeignKey('quizzes.id'), nullable=False)
 
