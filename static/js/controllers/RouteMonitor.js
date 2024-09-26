@@ -105,8 +105,10 @@ export default class RouteCrawler {
         `;
       } else {
         display += `
-          <h3 class="color-red">Quiz Not Found!</h3>
-          <p class="page-description">We do not have quiz available for students.</p>
+         <div class="bg-grey page-padding">
+               <h3 class="color-red">Quiz Not Found!</h3>
+              <p class="page-description">We do not have quiz available for students.</p>
+         </div>
         `;
       }
       htmlUi.innerHTML = display;
@@ -120,10 +122,10 @@ export default class RouteCrawler {
       let htmlUi = document.querySelector(".quiz-container");
 
       const questions = await Base.getQuizQuestion();
-      let count = 0;
 
       if (htmlUi && quizzes.length > 0) {
         quizzes.forEach((quiz) => {
+          let count = 0;
           if (questions != null || questions.length != 0) {
             questions.forEach((question) => {
               if (question.quiz_id == quiz.id) {
@@ -165,7 +167,7 @@ export default class RouteCrawler {
         });
       } else {
         display += `
-          <div>
+          <div class="bg-grey page-padding">
             <h3 class="color-red">Quiz not available!</h3>
             <p class="page-description">You have no quiz available at the moment.</p>
           </div>
@@ -248,8 +250,10 @@ export default class RouteCrawler {
       `;
       } else {
         display += `
+        <div class="bg-grey page-padding">
           <h3 class="color-red">Quiz Question Not Found!</h3>
           <p class="page-description">You have no quiz questions set at the moment.</p>
+          </div>
         `;
       }
       htmlUi.innerHTML = display;
@@ -272,29 +276,29 @@ export default class RouteCrawler {
       questions.forEach((question) => {
         if (question.quiz_id == quiz_id) {
           counter++;
-
           display += `
                <div class="quiz-question" data-question-id="${question.id}">
                   <h5 class="title">(${counter}) ${question.question}</h5>
                   <div class="form-check">
-                      <input class="form-check-input" value="${question.optionA}" type="radio" name="${question.id}" id="${question.optionA}">
+                      <input class="form-check-input option" data-option=${question.id} value="${question.optionA}" type="radio" name="${question.id}" id="${question.optionA}">
                       <label class="form-check-label" for="${question.optionA}">
                           ${question.optionA}
                       </label>
                   </div>
                   <div class="form-check">
-                      <input class="form-check-input" value="${question.optionB}" type="radio" name="${question.id}" id="${question.optionB}">
+                      <input class="form-check-input option" data-option=${question.id} value="${question.optionB}" type="radio" name="${question.id}" id="${question.optionB}">
                       <label class="form-check-label" for="${question.optionB}">
                           ${question.optionB}
                       </label>
                   </div>
                   <div class="form-check">
-                      <input class="form-check-input" type="radio" value="${question.optionC}" name="${question.id}" id="${question.optionC}">
+                      <input class="form-check-input option" data-option=${question.id} type="radio" value="${question.optionC}" name="${question.id}" id="${question.optionC}">
                       <label class="form-check-label" for="${question.optionC}">
                           ${question.optionC}
                       </label>
                   </div>
-                  <input type='hidden' value="${question.optionCorrect}" name="optionCorrect" />
+                  
+                  <input type='hidden' class="correctOption" data-option=${question.id} value="${question.optionCorrect}" name="optionCorrect" />
                  
               </div>
           `;
@@ -332,15 +336,6 @@ export default class RouteCrawler {
       if (userCount) {
         userCount.innerText = total;
       }
-    }
-  }
-
-  userQuiz(quiz = null) {
-    let total = 0;
-    const userid = Base.token["id"];
-
-    if (quiz != null) {
-      quiz.forEach((item) => {});
     }
   }
 
@@ -440,8 +435,10 @@ export default class RouteCrawler {
       `;
       } else {
         display += `
-          <h3 class="color-red">Results not available!</h3>
-          <p class="page-description">You have no quiz results at the moment.</p>
+          <div class="bg-grey page-padding">
+              <h3 class="color-red">Results not available!</h3>
+              <p class="page-description">You have no quiz results at the moment.</p>
+          </div>
         `;
       }
       htmlUi.innerHTML = display;
@@ -489,8 +486,10 @@ export default class RouteCrawler {
     `;
       } else {
         display += `
-          <h3 class="color-red">User Account Not Found!</h3>
-          <p class="page-description">There are no registered user at the moment</p>
+          <div class="page-padding bg-grey">
+            <h3 class="color-red">User Account Not Found!</h3>
+            <p class="page-description">There are no registered user at the moment</p>
+          </div>
         `;
       }
       htmlUi.innerHTML = display;

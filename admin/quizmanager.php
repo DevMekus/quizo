@@ -125,12 +125,13 @@ include("header.php");
                         </textarea>
 
                     </div>
-
+                <div class="res mt-10"></div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="button button-primary radius-5">Edit Quiz</button>
                 </div>
             </form>
+
         </div>
     </div>
 </div>

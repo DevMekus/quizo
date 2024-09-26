@@ -77,8 +77,9 @@ export default class Application {
 
   newQuiz() {
     const newQuiz = document.querySelector(".newQuiz");
+    const res = document.querySelector(".res");
 
-    if (newQuiz) {
+    if (newQuiz && res) {
       newQuiz.addEventListener("submit", (e) => {
         e.preventDefault();
         postData(
@@ -86,7 +87,16 @@ export default class Application {
           JSON.stringify(utils.formData_to_Object(new FormData(newQuiz)))
         ).then((response) => {
           utils.feedback(response);
-          console.log(response);
+          res.innerHTML = ``;
+          res.innerHTML = `  
+           <div class="alert alert-${
+             response["status"] == "success" ? "success" : "danger"
+           } alert-dismissible fade show" role="alert">
+                <p class="">${response["message"]}.</p>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+                 `;
+
           setTimeout(() => {
             location.reload();
           }, 1500);
@@ -170,34 +180,40 @@ export default class Application {
     const quiz_id = params.get("id");
 
     if (quizForm) {
-      quizForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        let totalQuestions = document.querySelectorAll(".quiz-question").length;
+      quizForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const quizID = document.querySelector(".data-wrappings");
+        const questions = document.querySelectorAll(".quiz-question");
+        let totalQuestions = questions.length;
         let correctAnswers = 0;
 
-        document
-          .querySelectorAll(".quiz-question")
-          .forEach((questionDiv, index) => {
-            const questionNumber = index + 1;
+        if (questions) {
+          for (let i = 0; i < questions.length; i++) {
+            const currentQuestion =
+              questions[i].getAttribute("data-question-id");
+            const correctOptions = document.querySelectorAll(".correctOption");
+            const options = document.querySelectorAll(".option");
 
-            const selectedOption = document.querySelector(
-              `input[name="question${questionNumber}"]:checked`
-            );
-
-            const correctAnswer = document.querySelector(
-              `input[name="optionCorrect${questionNumber}"]`
-            );
-
-            if (correctAnswer) {
-              correctAnswer = correctAnswer.value;
+            if (correctOptions && options) {
+              for (let j = 0; j < options.length; j++) {
+                for (let k = 0; k < correctOptions.length; k++) {
+                  if (
+                    (options[j].getAttribute("data-option") ==
+                      correctOptions[k].getAttribute("data-option")) ==
+                    currentQuestion
+                  ) {
+                    if (
+                      options[j].checked &&
+                      options[j].value == correctOptions[k].value
+                    ) {
+                      correctAnswers++;
+                    }
+                  }
+                }
+              }
             }
-
-            if (selectedOption && selectedOption.value === correctAnswer) {
-              correctAnswers++;
-            }
-          });
-
+          }
+        }
         scoreBoard.innerHTML = ``;
         scoreBoard.innerHTML = `
           <div class="card">
@@ -222,6 +238,67 @@ export default class Application {
       });
     }
   }
+
+  // submitQuiz() {
+  //   const quizForm = document.getElementById("quiz-form");
+  //   const scoreBoard = document.querySelector(".score-board");
+  //   const url = new URL(window.location.href);
+  //   const params = new URLSearchParams(url.search);
+  //   const quiz_id = params.get("id");
+
+  //   if (quizForm) {
+  //     quizForm.addEventListener("submit", function (event) {
+  //       event.preventDefault();
+
+  //       let totalQuestions = document.querySelectorAll(".quiz-question").length;
+  //       let correctAnswers = 0;
+
+  //       document
+  //         .querySelectorAll(".quiz-question")
+  //         .forEach((questionDiv, index) => {
+  //           const questionNumber = index + 1;
+
+  //           const selectedOption = document.querySelector(
+  //             `input[name="question${questionNumber}"]:checked`
+  //           );
+
+  //           const correctAnswer = document.querySelector(
+  //             `input[name="optionCorrect${questionNumber}"]`
+  //           );
+
+  //           if (correctAnswer) {
+  //             correctAnswer = correctAnswer.value;
+  //           }
+
+  //           if (selectedOption && selectedOption.value === correctAnswer) {
+  //             correctAnswers++;
+  //           }
+  //         });
+
+  //       scoreBoard.innerHTML = ``;
+  //       scoreBoard.innerHTML = `
+  //         <div class="card">
+  //               <div class="card-body">
+  //                   <h5>Score</h5>
+  //                   <p class="page-description">Your score on quiz</p>
+  //                   <h1>${correctAnswers}/${totalQuestions}</h1>
+  //               </div>
+  //           </div>
+  //       `;
+  //       const data = {
+  //         quiz_id: quiz_id,
+  //         userid: Base.token["id"],
+  //         score: correctAnswers,
+  //       };
+  //       console.log(data);
+  //       postData(`${Base.apiUrl}quiz/result`, JSON.stringify(data)).then(
+  //         (response) => {
+  //           utils.feedback(response);
+  //         }
+  //       );
+  //     });
+  //   }
+  // }
 
   static delete_result() {
     const delResult = document.querySelectorAll(".delResult");
