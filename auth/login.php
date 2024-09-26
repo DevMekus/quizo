@@ -25,6 +25,7 @@ include("header.php");
         <div class="auth-title-con  mt-10">
             <h1>Login to account</h1>
             <p>Enter your credentials and login</p>
+            <a href="../index.php">Go home</a>
         </div>
 
         <div class="auth-body-con">

@@ -114,23 +114,51 @@ export default class RouteCrawler {
     }
   }
 
-  display_quiz_card(quizzes = null) {
+  async display_quiz_card(quizzes = null) {
     if (quizzes != null && Base.pageUrl.includes("/dashboard/quiz.php")) {
       let display = ``;
       let htmlUi = document.querySelector(".quiz-container");
 
+      const questions = await Base.getQuizQuestion();
+      let count = 0;
+
       if (htmlUi && quizzes.length > 0) {
         quizzes.forEach((quiz) => {
+          if (questions != null || questions.length != 0) {
+            questions.forEach((question) => {
+              if (question.quiz_id == quiz.id) {
+                count++;
+              }
+            });
+          }
+
           display += `
             <div class="quiz-wrap">
                     <h5 class="title">${quiz.title}</h5>
                     <p class="description">${quiz.description}</p>
-                    <ul>
-                        <li>Questions: 20</li>
-                        <li>Level: Easy</li>
-                    </ul>
+                    <div class="mt-10">
+                      <table class="table table-hover">
+                      <thead>
+                      <tr>
+                        <th></th>
+                        <th></th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Questions</td>
+                          <td>${count}</td>
+                        </tr>
+                        <tr>
+                          <td>Difficulty</td>
+                          <td>Easy</td>
+                        </tr>
+                      </tbody>
+                      </table>
+                      </div>
+                                         
                     <div class="bottom">
-                        <a href="take-quiz.php?id=${quiz.id}" class="button button-primary radius-5">Take Quiz</a>
+                        <a href="take-quiz.php?id=${quiz.id}" class="button button-primary radius-5">Take Quiz <i class="fas fa-arrow-right"></i></a>
                     </div>              
               </div>
           `;
@@ -148,8 +176,19 @@ export default class RouteCrawler {
     }
   }
 
-  countQuizQuestion(quiz_id, questions) {
-    return 0;
+  async countQuizQuestion(id) {
+    const questions = await Base.getQuizQuestion();
+    let count = 0;
+
+    if (questions != null || questions.length != 0) {
+      questions.forEach((question) => {
+        if (question.quiz_id == id) {
+          count++;
+        }
+      });
+    }
+
+    return count;
   }
 
   get_all_questions() {
@@ -345,8 +384,11 @@ export default class RouteCrawler {
         }
         display += `
                           <th scope="col">Quiz</th>
-                          <th scope="col">Score</th>
-                         
+                          <th scope="col">Score</th>`;
+        if (page == "admin") {
+          display += `<th scope="col"></th>`;
+        }
+        display += `  
                     </tr>
                 </thead>
                 <tbody>
@@ -380,7 +422,14 @@ export default class RouteCrawler {
             }
             display += `
                 <td>${quizName}</td>
-                <td>${result.score}</td>                
+                <td>${result.score}</td>`;
+            if (page == "admin") {
+              display += `
+                <td>
+                <button class="btn button-danger btn-sm delResult" data-id="${result.id}"><i class="fas fa-times"></i></button>
+                </td>`;
+            }
+            display += `              
             </tr>
         `;
           }
@@ -438,7 +487,6 @@ export default class RouteCrawler {
       </tbody>
       </table>
     `;
-        Application.delete_user();
       } else {
         display += `
           <h3 class="color-red">User Account Not Found!</h3>
@@ -446,6 +494,7 @@ export default class RouteCrawler {
         `;
       }
       htmlUi.innerHTML = display;
+      Application.delete_user();
     }
   }
 }

@@ -13,6 +13,7 @@ include("header.php");
                 <p class="page-description">View user participation in quizzes and their scores.
                 </p>
             </div>
+            <div class="mt-10 feedback"></div>
             <section class="manage-quiz mt-10 container">
                 <div class="row">
                     <div class="col-sm-12">
@@ -44,12 +45,12 @@ include("header.php");
                                                 <td>Gets all the quiz questions in the platform</td>
                                             </tr>
 
-                                            <!-- <tr>
+                                            <tr>
                                                 <th>DELETE</th>
-                                                <td>/questions/question_id
+                                                <td>/quiz/results/result_id
                                                 </td>
-                                                <td>Delete a quiz question using the question id</td>
-                                            </tr> -->
+                                                <td>Delete a quiz result using the result id</td>
+                                            </tr>
                                         </tbody>
                                         </thead>
                                     </table>

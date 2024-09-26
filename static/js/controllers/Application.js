@@ -18,6 +18,7 @@ export default class Application {
       });
     }
   }
+
   login() {
     const loginForm = document.querySelector(".login_form");
 
@@ -128,10 +129,10 @@ export default class Application {
           JSON.stringify(utils.formData_to_Object(new FormData(newQuestion)))
         ).then((response) => {
           utils.feedback(response);
-          console.log(response);
-          // setTimeout(() => {
-          //   location.reload();
-          // }, 1500);
+
+          setTimeout(() => {
+            location.reload();
+          }, 1500);
         });
       });
     }
@@ -149,7 +150,7 @@ export default class Application {
             deleteData(`${Base.apiUrl}questions/question/${id}`).then(
               (response) => {
                 utils.feedback(response);
-                console.log(response);
+
                 setTimeout(() => {
                   location.reload();
                 }, 1500);
@@ -222,7 +223,26 @@ export default class Application {
     }
   }
 
-  static delete_result() {}
+  static delete_result() {
+    const delResult = document.querySelectorAll(".delResult");
+
+    if (delResult) {
+      for (let i = 0; i < delResult.length; i++) {
+        delResult[i].addEventListener("click", () => {
+          const id = delResult[i].getAttribute("data-id");
+
+          if (confirm("Do you wish to continue?")) {
+            deleteData(`${Base.apiUrl}quiz/result/${id}`).then((response) => {
+              utils.feedback(response);
+              setTimeout(() => {
+                location.reload();
+              }, 1500);
+            });
+          }
+        });
+      }
+    }
+  }
 
   static delete_user() {
     const delUser = document.querySelectorAll(".delUser");
